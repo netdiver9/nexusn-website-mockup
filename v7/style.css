@@ -347,9 +347,9 @@ body.nav-open .mobile-nav { display: block; }
   inset: 0;
   background: linear-gradient(to top, rgba(8, 59, 45, 0.45), rgba(8, 59, 45, 0.06) 55%);
 }
-.hero .slide-1 { background-image: url("../assets/img/v7-hero-1.jpg"); }
-.hero .slide-2 { background-image: url("../assets/img/v7-hero-2.jpg"); }
-.hero .slide-3 { background-image: url("../assets/img/v7-hero-3.jpg"); }
+.hero .slide-1 { background-image: url("../assets/img/v7-korean-hero-1.png"); }
+.hero .slide-2 { background-image: url("../assets/img/v7-korean-hero-2.png"); }
+.hero .slide-3 { background-image: url("../assets/img/v7-korean-hero-3.png"); }
 
 .hero .hero-dots {
   position: absolute;
@@ -496,8 +496,8 @@ body.nav-open .mobile-nav { display: block; }
 }
 .svc-row:hover .thumb::after { background: rgba(13, 92, 70, 0); }
 .svc-row.s1 .thumb { background-image: url("../assets/img/v7-svc-1.jpg"); }
-.svc-row.s2 .thumb { background-image: url("../assets/img/v7-svc-2.jpg"); }
-.svc-row.s3 .thumb { background-image: url("../assets/img/v7-svc-3.jpg"); }
+.svc-row.s2 .thumb { background-image: url("../assets/img/v7-korean-service-2.png"); }
+.svc-row.s3 .thumb { background-image: url("../assets/img/v7-korean-service-3.png"); }
 .svc-row .num {
   font-size: 15px;
   font-weight: 800;
