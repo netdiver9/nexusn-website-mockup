@@ -412,3 +412,11 @@
 .site-theme-v2.detail-board .page-hero{background:linear-gradient(rgba(7,27,51,.6),rgba(7,27,51,.6)),url("../../assets/img/hero-meeting.jpg") center/cover}
 .site-theme-v2 .sub-section:nth-of-type(even){background:linear-gradient(rgba(7,27,51,.72),rgba(7,27,51,.72)),url("../../assets/img/hero-office.jpg") center/cover fixed}
 .site-theme-v2 .sub-section:nth-of-type(4n){background:linear-gradient(rgba(7,27,51,.72),rgba(7,27,51,.72)),url("../../assets/img/v2-hero-3.jpg") center/cover fixed}
+
+/* ---------- 모바일 보정 ---------- */
+@media (max-width:640px){
+  .site-theme-v2 .page-hero h1{font-size:clamp(27px,8.5vw,36px);word-break:normal}
+  .site-theme-v2 .lead-copy h2{font-size:23px;word-break:normal}
+  .site-theme-v2 .sub-section>h2{font-size:21px;word-break:normal}
+  .site-theme-v2 .sub-section:nth-of-type(even){padding-top:56px;padding-bottom:56px}
+}

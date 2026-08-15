@@ -316,3 +316,24 @@
   .process-grid, .contact-grid { grid-template-columns: 1fr; }
   .footer-links, .site-footer .f-links { flex-wrap: wrap; gap: 10px 16px; }
 }
+
+/* ==================== 모바일 보정 ==================== */
+@media (max-width: 640px) {
+  body { overflow-x: hidden; }
+  .hero h1 { font-size: clamp(25px, 7.8vw, 34px); word-break: normal; }
+  .hero .hero-eyebrow { font-size: 11.5px; letter-spacing: 0.14em; }
+  .about-split { grid-template-columns: 1fr; }
+  .stat-strip-inner { flex-wrap: wrap; }
+  .stat-strip .st { flex: 1 1 40%; min-width: 0; }
+  .stat-strip .st b { font-size: 25px; }
+  .photo-wide .pw-caption h2 { font-size: 20px; word-break: normal; }
+  .sec-head h2 { word-break: normal; }
+}
+
+/* 모바일 히어로: 고정 100vh 대신 유동 높이로 — 상단 잘림 방지 */
+@media (max-width: 640px) {
+  .hero { height: auto; min-height: 0; padding: 130px 0 100px; }
+  .hero .hero-inner { justify-content: flex-start; height: auto; }
+  .stat-strip-inner { flex-wrap: wrap; justify-content: center; }
+  .stat-strip .st { flex: 1 1 42%; min-width: 0; }
+}

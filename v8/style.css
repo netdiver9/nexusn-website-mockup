@@ -51,3 +51,12 @@
   .v8 .process-grid { grid-template-columns: 1fr; }
   .v8 .hero-proof { grid-template-columns: 1fr 1fr; }
 }
+
+/* 모바일 보정: 하단 실적 스트립을 정적 풀폭으로 */
+@media (max-width: 640px) {
+  .hero-proof { position: static; width: 100%; grid-template-columns: 1fr 1fr; }
+  .hero-proof > a { grid-column: span 2; }
+  .v8-hero { height: auto; min-height: 0; padding: 120px 0 0; }
+  .v8-hero h1 { font-size: clamp(32px, 10vw, 42px); }
+  .intro-grid h2, .service-heading h2, .v8-process h2, .people-copy h2, .contact-heading h2 { word-break: normal; }
+}

@@ -790,3 +790,11 @@ body.nav-open .mobile-nav { display: block; }
 @media (max-width: 420px) {
   .v7 .stat-band { grid-template-columns: 1fr; }
 }
+
+/* ==================== 모바일 보정 ==================== */
+@media (max-width: 640px) {
+  .hero h1 { font-size: clamp(28px, 8.8vw, 36px); word-break: normal; }
+  .hero .hero-desc { font-size: 15px; }
+  .sec-title { word-break: normal; }
+  .talent h2 { word-break: normal; }
+}

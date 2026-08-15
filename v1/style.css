@@ -331,3 +331,13 @@
   .home-new .contact-panel dl > div { grid-template-columns: 64px minmax(0, 1fr); }
   .home-new .site-footer .f-links { flex-wrap: wrap; gap: 10px 16px; }
 }
+
+/* ==================== 모바일 보정 ==================== */
+@media (max-width: 640px) {
+  .home-new .new-hero h1 { font-size: clamp(30px, 9.6vw, 40px); line-height: 1.05; }
+  .hero-kor { font-size: 15px; }
+  .process-head h2 { font-size: 32px; }
+  .process-head p { font-size: 14px; }
+  .talent-photo-block .tp-big { font-size: 58px; }
+  .talent-photo-block .tp-chip { font-size: 12.5px; padding: 9px 15px; }
+}
