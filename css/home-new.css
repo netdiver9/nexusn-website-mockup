@@ -130,6 +130,9 @@
 .theme-dark .strength:hover .strength-icon svg,.theme-dark .process-track>div:hover span svg{transform:scale(1.1) rotate(-3deg)}
 .theme-minimal .strength-icon,.theme-minimal .process-track span{display:grid;place-items:center;width:58px;height:58px;border:1px solid #2785e6;border-radius:10px;background:#e6f0ff;color:#155eae;font:500 27px/1 ui-monospace,SFMono-Regular,Menlo,monospace;clip-path:polygon(16% 0,84% 0,100% 16%,100% 84%,84% 100%,16% 100%,0 84%,0 16%)}
 .theme-minimal .strength-icon{margin-top:58px}.theme-minimal .process-track span{margin:28px 0 20px}
+.theme-minimal .strength-icon,.theme-minimal .process-track span{width:72px;height:72px;background:linear-gradient(145deg,#eef5ff,#d8e7fb);box-shadow:0 10px 25px rgba(39,133,230,.14)}
+.theme-minimal .strength-icon svg,.theme-minimal .process-track span svg{width:43px;height:43px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s,stroke-width .25s}
+.theme-minimal .strength:hover .strength-icon svg,.theme-minimal .process-track>div:hover span svg{transform:scale(1.08);stroke-width:2.15}
 
 .new-talent { min-height: 760px; display:grid;grid-template-columns:1.15fr .85fr;background:#deded7 }
 .talent-photo-block{background:url("../assets/img/talent-banner.jpg") center/cover}.talent-copy{padding:clamp(60px,8vw,130px);display:flex;flex-direction:column;justify-content:center}.talent-copy>span{color:#5e655e}.talent-copy h2{font-size:clamp(48px,6vw,82px);line-height:.98;letter-spacing:-.06em;margin:40px 0}.talent-copy h3{font-size:24px;margin-bottom:16px}.talent-copy p{color:#666b65;line-height:1.8}.talent-copy>a{margin-top:50px;padding:18px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);display:flex;justify-content:space-between;font-weight:800}.talent-copy>a b{font-size:22px}
