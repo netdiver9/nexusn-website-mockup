@@ -224,15 +224,45 @@ body[class*="site-theme-"] .site-footer{background:var(--t-primary)}body[class*=
    시안 1 · 2 · 7 심화 스타일 — 상세페이지에 각 시안의 디자인 정체성 반영
    ========================================================================== */
 
-/* ---------- 시안 1 : 그래픽 에디토리얼 (좌측 정렬 빅 타이포 + 도트 텍스처) ---------- */
-.site-theme-v1 .page-hero{position:relative;text-align:left;background:#102b45;overflow:hidden}
-.site-theme-v1 .page-hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:26px 26px;pointer-events:none}
+/* ---------- 시안 1 : 모던 트렌드 (그라데이션 글로우 + 글래스 + 빅 타이포) ---------- */
+.site-theme-v1{--t-primary:#0f1c33;--t-accent:#4d7fff;--t-grad:linear-gradient(94deg,#4d7fff,#8b5cf6 55%,#3dd6f5);--t-bg:#f6f8fd;--t-soft:#e9efff;--t-radius:20px}
+/* 글래스 헤더 */
+.site-theme-v1 .site-header{background:rgba(246,248,253,.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.site-theme-v1 .gnb>li>a::after{background:var(--t-grad);height:3px;border-radius:3px}
+/* 히어로: 다크 잉크 + 글로우 블롭 + 그라데이션 빅 타이포 (좌측 정렬) */
+.site-theme-v1 .page-hero{position:relative;text-align:left;background:#0b1426;overflow:hidden;padding:110px 0 88px}
+.site-theme-v1 .page-hero::before{content:"";position:absolute;right:-160px;top:-180px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(77,127,255,.45),rgba(139,92,246,.18) 55%,transparent 75%);filter:blur(10px);pointer-events:none}
+.site-theme-v1 .page-hero::after{content:"";position:absolute;left:-120px;bottom:-200px;width:460px;height:460px;border:none;border-radius:50%;background:radial-gradient(circle,rgba(61,214,245,.25),transparent 70%);transform:none;filter:blur(8px);pointer-events:none}
 .site-theme-v1 .page-hero>*{position:relative;width:min(1180px,92%);margin-left:auto;margin-right:auto}
-.site-theme-v1 .page-hero h1{font-size:clamp(40px,6vw,72px);letter-spacing:-.04em;line-height:1.1}
-.site-theme-v1 .page-hero .p-eyebrow{letter-spacing:.3em}
-.site-theme-v1 .page-hero .breadcrumb{margin-top:22px}
-.site-theme-v1 .sub-section>h2{letter-spacing:-.02em}
-.site-theme-v1 .lead-copy h2{letter-spacing:-.03em}
+.site-theme-v1 .page-hero h1{font-size:clamp(42px,6.4vw,76px);letter-spacing:-.045em;line-height:1.08;background:linear-gradient(94deg,#fff 30%,#9db8ff 70%,#3dd6f5);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:6px}
+.site-theme-v1 .page-hero .p-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#bcd0ff;letter-spacing:.16em;font-size:12.5px}
+.site-theme-v1 .page-hero .breadcrumb{margin-top:24px;color:rgba(255,255,255,.55)}
+/* 본문: 필 태그 + 그라데이션 포인트 + 라운드 카드 */
+.site-theme-v1 .sub-section>h2{border-left:none;padding-left:0;letter-spacing:-.03em}
+.site-theme-v1 .sub-section>h2::after{content:"";display:block;width:56px;height:4px;border-radius:4px;background:var(--t-grad);margin-top:12px}
+.site-theme-v1 .sub-section>.s-desc{padding-left:0}
+.site-theme-v1 .lead-copy .en{display:inline-flex;padding:6px 16px;border-radius:999px;background:var(--t-soft);color:#3b62d9;letter-spacing:.14em}
+.site-theme-v1 .lead-copy h2{letter-spacing:-.035em}
+.site-theme-v1 .info-card,.site-theme-v1 .job-card{border:1px solid #e3e9f6;background:#fff;position:relative;overflow:hidden}
+.site-theme-v1 .info-card::before,.site-theme-v1 .job-card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--t-grad);opacity:0;transition:opacity .3s}
+.site-theme-v1 .info-card:hover::before,.site-theme-v1 .job-card:hover::before{opacity:1}
+.site-theme-v1 .info-card:hover,.site-theme-v1 .job-card:hover{border-color:#c9d8ff;box-shadow:0 20px 50px rgba(77,127,255,.16)}
+.site-theme-v1 .info-card .icon-wrap{background:var(--t-soft);color:#3b62d9;border-radius:16px}
+.site-theme-v1 .btn{border-radius:999px}
+.site-theme-v1 .btn-solid{background:var(--t-grad);border:none;color:#fff}
+.site-theme-v1 .btn-solid:hover{box-shadow:0 14px 34px rgba(77,127,255,.4);transform:translateY(-2px)}
+.site-theme-v1 .btn-outline{border-color:#4d7fff;color:#3b62d9}
+.site-theme-v1 .btn-outline:hover{background:#4d7fff;color:#fff}
+.site-theme-v1 .process-step .p-icon{border-radius:22px;background:#fff;border:1px solid #e3e9f6;color:#3b62d9;box-shadow:0 10px 26px rgba(77,127,255,.12)}
+.site-theme-v1 .p-num,.site-theme-v1 .process-step .p-num{background:var(--t-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.site-theme-v1 .page-tabs a.active{border-image:linear-gradient(94deg,#4d7fff,#8b5cf6) 1;border-bottom-width:3px}
+.site-theme-v1 .action-box{background:linear-gradient(120deg,#0b1426,#16294d);border:none;color:#fff}
+.site-theme-v1 .action-box h3{color:#fff}
+.site-theme-v1 .action-box p{color:#a9bbdc}
+.site-theme-v1 .greeting-quote .accent{background:var(--t-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.site-theme-v1 .talent-banner,.site-theme-v1 .mv-card{background:linear-gradient(125deg,#16294d,#3b62d9)}
+.site-theme-v1 .mv-card.alt{background:linear-gradient(125deg,#0b1426,#6d4fd6)}
+.site-theme-v1 .site-footer{background:#0b1426}
 
 /* ---------- 시안 2 : 포토 코퍼레이트 (사진 히어로 + 다크 네이비 헤더 + 골드) ---------- */
 .site-theme-v2 .site-header{background:rgba(7,27,51,.96);border-bottom-color:rgba(255,255,255,.12)}
