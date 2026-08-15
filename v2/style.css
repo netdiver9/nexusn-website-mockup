@@ -237,18 +237,14 @@
 /* 히어로: 오버레이를 걷어 사진이 밝고 크게 보이도록 + 밝은 팀 사진으로 교체 */
 .hero .slide-1 {
   background-image: linear-gradient(100deg, rgba(8, 20, 40, 0.52) 12%, rgba(8, 20, 40, 0.08) 62%),
-    url("../assets/img/v2-hero-2.jpg");
+    url("../assets/img/v2-hero-5.jpg");
 }
 .hero .slide-2 {
   background-image: linear-gradient(100deg, rgba(8, 20, 40, 0.52) 12%, rgba(8, 20, 40, 0.08) 62%),
-    url("../assets/img/v2-hero-1.jpg");
+    url("../assets/img/v2-hero-6.jpg");
 }
 .hero .slide-3 {
   background-image: linear-gradient(100deg, rgba(8, 20, 40, 0.52) 12%, rgba(8, 20, 40, 0.08) 62%),
-    url("../assets/img/hero-meeting.jpg");
-}
-.hero .slide-4 {
-  background-image: linear-gradient(100deg, rgba(8, 20, 40, 0.42) 12%, rgba(8, 20, 40, 0.05) 62%),
     url("../assets/img/v2-hero-4.jpg");
 }
 .hero h1, .hero .hero-eyebrow { text-shadow: 0 2px 24px rgba(7, 27, 51, 0.55); }
