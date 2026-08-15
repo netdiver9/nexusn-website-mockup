@@ -215,3 +215,94 @@
 .why-card .icon-wrap, .contact-item .c-icon { background: #f3ecdc; color: #9a712a; }
 .why-card:hover .icon-wrap { background: #071b33; color: #d4a74f; }
 .why-card .icon-wrap svg, .process-step .p-icon svg, .contact-item .c-icon svg { stroke-width: 1.15; }
+
+/* ==========================================================================
+   jlhuman 스타일 강화 — 사진을 더 크고 밝게, 메뉴까지 사진이 차오르게
+   ========================================================================== */
+
+/* 헤더: 히어로 사진 위에 투명하게 얹히고, 스크롤하면 네이비로 */
+.site-header { background: transparent; border-bottom: 2px solid transparent; }
+.site-header.scrolled { background: rgba(7, 27, 51, 0.96); border-bottom-color: rgba(255, 255, 255, 0.12); }
+/* 메뉴 가독성을 위한 상단 스크림 */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 170px;
+  background: linear-gradient(to bottom, rgba(7, 27, 51, 0.6), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 히어로: 오버레이를 걷어 사진이 밝고 크게 보이도록 + 밝은 팀 사진으로 교체 */
+.hero .slide-1 {
+  background-image: linear-gradient(100deg, rgba(8, 20, 40, 0.52) 12%, rgba(8, 20, 40, 0.08) 62%),
+    url("../assets/img/v2-hero-3.jpg");
+}
+.hero .slide-2 {
+  background-image: linear-gradient(100deg, rgba(8, 20, 40, 0.52) 12%, rgba(8, 20, 40, 0.08) 62%),
+    url("../assets/img/v2-wide.jpg");
+}
+.hero .slide-3 {
+  background-image: linear-gradient(100deg, rgba(8, 20, 40, 0.52) 12%, rgba(8, 20, 40, 0.08) 62%),
+    url("../assets/img/hero-meeting.jpg");
+}
+.hero h1, .hero .hero-eyebrow { text-shadow: 0 2px 24px rgba(7, 27, 51, 0.55); }
+
+/* 사진 밴드: 더 밝게 */
+.section.tinted {
+  background: linear-gradient(rgba(7, 27, 51, 0.68), rgba(7, 27, 51, 0.68)),
+    url("../assets/img/about-team.jpg") center / cover fixed;
+}
+.section.tinted:has(.process-flow) {
+  background: linear-gradient(rgba(7, 27, 51, 0.7), rgba(7, 27, 51, 0.7)),
+    url("../assets/img/v2-hero-3.jpg") center / cover fixed;
+}
+
+/* 회사소개 사진 더 크게 */
+.about-split { grid-template-columns: 1fr 1.5fr; }
+.about-split .a-photo img { aspect-ratio: 16 / 9; }
+
+/* 사업영역 사진 카드 더 크게 */
+.biz-card { min-height: 540px; }
+
+/* 초대형 풀폭 사진 쇼케이스 (jlhuman 스타일) */
+.photo-wide {
+  position: relative;
+  height: 82vh;
+  min-height: 520px;
+  background: linear-gradient(rgba(7, 27, 51, 0.18), rgba(7, 27, 51, 0.42) 78%),
+    url("../assets/img/hero-office.jpg") center / cover fixed;
+  display: flex;
+  align-items: flex-end;
+}
+.photo-wide .pw-caption {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+  padding-bottom: clamp(44px, 7vh, 80px);
+  color: #fff;
+}
+.photo-wide .pw-caption small {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--v2-gold, #d4a74f);
+  margin-bottom: 12px;
+}
+.photo-wide .pw-caption h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  font-size: clamp(26px, 3.8vw, 44px);
+  line-height: 1.4;
+  text-shadow: 0 2px 20px rgba(7, 27, 51, 0.5);
+}
+
+@supports (-webkit-touch-callout: none) {
+  .photo-wide { background-attachment: scroll; }
+}
+@media (max-width: 1024px) {
+  .photo-wide { background-attachment: scroll; height: 60vh; }
+  .biz-card { min-height: 420px; }
+}
