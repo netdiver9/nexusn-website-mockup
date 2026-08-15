@@ -83,4 +83,61 @@ body[class*="site-theme-"] .site-footer{background:var(--t-primary)}body[class*=
 .site-theme-v9 .info-card{background:transparent;border-top:1px solid var(--t-primary);border-bottom:1px solid var(--t-primary)}
 .site-theme-v9 .sub-section>h2{font-style:italic;font-weight:400}
 
-@media(max-width:640px){body[class*="site-theme-"] .page-hero{padding:78px 0 58px}body[class*="site-theme-"] .page-hero::after{width:80px;height:80px;right:-20px}body[class*="site-theme-"] .page-tabs .tabs-inner{justify-content:flex-start}body[class*="site-theme-"] .sub-content{padding-top:60px}}
+/* 도급(업무위탁) — 시안마다 서비스 콘텐츠 구성도 다르게 표현 */
+.service-outsourcing[class*="site-theme-"] .lead-copy{position:relative;max-width:920px}
+.service-outsourcing[class*="site-theme-"] .sub-section{position:relative}
+.service-outsourcing[class*="site-theme-"] .action-box{border-color:color-mix(in srgb,var(--t-primary) 18%,transparent);background:var(--t-soft)}
+.service-outsourcing.site-theme-v1 .lead-copy{border-left:5px solid var(--t-accent);padding-left:32px}
+.service-outsourcing.site-theme-v1 .card-grid{gap:1px;background:var(--t-primary);border:1px solid var(--t-primary)}
+.service-outsourcing.site-theme-v1 .info-card{border:0;border-radius:0}
+.service-outsourcing.site-theme-v1 .action-box{border-radius:0;border-left:8px solid var(--t-accent)}
+
+.service-outsourcing.site-theme-v2 .lead-copy{text-align:center;margin-inline:auto}
+.service-outsourcing.site-theme-v2 .lead-copy::after{content:"◆";display:block;margin-top:28px;color:var(--t-accent);font-size:12px}
+.service-outsourcing.site-theme-v2 .card-grid{gap:28px}.service-outsourcing.site-theme-v2 .info-card{text-align:center;padding:42px 28px}
+.service-outsourcing.site-theme-v2 .info-card .icon-wrap{margin-inline:auto;border:1px solid var(--t-accent);background:transparent}
+.service-outsourcing.site-theme-v2 .action-box{border:1px solid var(--t-accent);background:transparent}
+
+.service-outsourcing.site-theme-v3 .lead-copy{padding:38px 42px;background:#fff;border-radius:28px;box-shadow:0 18px 50px rgba(16,43,63,.08)}
+.service-outsourcing.site-theme-v3 .lead-copy::before{content:"OUTSOURCING";position:absolute;right:30px;top:24px;color:var(--t-accent);font-size:11px;font-weight:900;letter-spacing:.18em}
+.service-outsourcing.site-theme-v3 .card-grid{gap:16px}.service-outsourcing.site-theme-v3 .info-card:nth-child(even){transform:translateY(18px)}
+.service-outsourcing.site-theme-v3 .action-box{border:0;border-radius:28px;background:linear-gradient(120deg,var(--t-soft),#fff)}
+
+.service-outsourcing.site-theme-v4 .lead-copy{padding-left:60px}
+.service-outsourcing.site-theme-v4 .lead-copy::before{content:"O";position:absolute;left:-8px;top:-36px;color:var(--t-accent);font:italic 100px/1 Georgia,serif;opacity:.25}
+.service-outsourcing.site-theme-v4 .sub-section:nth-of-type(even){padding:56px;border-radius:46px;background:#fff3e9}
+.service-outsourcing.site-theme-v4 .info-card .icon-wrap{border-radius:50% 50% 45% 55%}
+.service-outsourcing.site-theme-v4 .action-box{border:0;background:var(--t-primary);color:#fff}.service-outsourcing.site-theme-v4 .action-box h3,.service-outsourcing.site-theme-v4 .action-box p{color:#fff}
+
+.service-outsourcing.site-theme-v5 .lead-copy{margin:0;padding:0 0 34px;border-bottom:8px solid var(--t-primary)}
+.service-outsourcing.site-theme-v5 .lead-copy .en{display:inline-block;padding:7px 12px;background:var(--t-accent);color:var(--t-primary)}
+.service-outsourcing.site-theme-v5 .sub-section>h2::after{content:" ↗";color:var(--t-accent)}
+.service-outsourcing.site-theme-v5 .card-grid{gap:22px}.service-outsourcing.site-theme-v5 .info-card{background:#fff}
+.service-outsourcing.site-theme-v5 .compare-table{border:3px solid var(--t-primary)}
+.service-outsourcing.site-theme-v5 .action-box{border:3px solid var(--t-primary);box-shadow:10px 10px 0 var(--t-accent);background:#fff}
+
+.service-outsourcing.site-theme-v6 .lead-copy{padding:32px;border:1px solid #b9d6fa;background:linear-gradient(135deg,#f4f9ff,#fff)}
+.service-outsourcing.site-theme-v6 .lead-copy::after{content:"01 / SERVICE MODULE";position:absolute;right:24px;top:20px;font:800 10px/1 var(--font);letter-spacing:.16em;color:var(--t-accent)}
+.service-outsourcing.site-theme-v6 .sub-section{padding-top:24px;border-top:1px solid #cbdcf1}
+.service-outsourcing.site-theme-v6 .info-card{box-shadow:none}.service-outsourcing.site-theme-v6 .info-card:hover{background:var(--t-soft)}
+.service-outsourcing.site-theme-v6 .action-box{border-radius:12px;background:linear-gradient(100deg,#153b73,#2785e6);color:#fff}.service-outsourcing.site-theme-v6 .action-box h3,.service-outsourcing.site-theme-v6 .action-box p{color:#fff}.service-outsourcing.site-theme-v6 .action-box .btn-outline{border-color:#fff;color:#fff}
+
+.service-outsourcing.site-theme-v7 .lead-copy{padding:46px;background:#fff;border-radius:70px 70px 18px 18px;text-align:center}
+.service-outsourcing.site-theme-v7 .card-grid{gap:24px}.service-outsourcing.site-theme-v7 .info-card:nth-child(odd){border-radius:70px 70px 24px 24px}
+.service-outsourcing.site-theme-v7 .info-card:nth-child(even){border-radius:24px 24px 70px 70px}
+.service-outsourcing.site-theme-v7 .info-card .icon-wrap{margin-inline:auto}.service-outsourcing.site-theme-v7 .action-box{border:0;border-radius:60px;background:#e5eee5}
+
+.service-outsourcing.site-theme-v8 .lead-copy{text-align:center;margin-inline:auto;padding:48px 28px;border-top:1px solid var(--t-accent);border-bottom:1px solid var(--t-accent)}
+.service-outsourcing.site-theme-v8 .sub-section>h2{display:flex;align-items:center;gap:18px}.service-outsourcing.site-theme-v8 .sub-section>h2::after{content:"";height:1px;flex:1;background:var(--t-accent)}
+.service-outsourcing.site-theme-v8 .info-card{padding-top:38px;border:1px solid #d8c9ae;border-top:4px solid var(--t-primary)}
+.service-outsourcing.site-theme-v8 .action-box{border:1px solid var(--t-accent);background:var(--t-primary)}
+.service-outsourcing.site-theme-v8 .action-box h3,.service-outsourcing.site-theme-v8 .action-box p{color:#fff}.service-outsourcing.site-theme-v8 .action-box .btn-solid{background:var(--t-accent);border-color:var(--t-accent);color:var(--t-primary)}.service-outsourcing.site-theme-v8 .action-box .btn-outline{border-color:#fff;color:#fff}
+
+.service-outsourcing.site-theme-v9 .lead-copy{display:grid;grid-template-columns:.7fr 1.3fr;gap:24px 48px;max-width:none}
+.service-outsourcing.site-theme-v9 .lead-copy .en{grid-row:1/3;font:italic 34px/1 Georgia,serif}.service-outsourcing.site-theme-v9 .lead-copy h2,.service-outsourcing.site-theme-v9 .lead-copy>p:last-child{grid-column:2}
+.service-outsourcing.site-theme-v9 .sub-section>h2{font-size:clamp(30px,4vw,48px)}
+.service-outsourcing.site-theme-v9 .card-grid{gap:0}.service-outsourcing.site-theme-v9 .info-card{padding:34px 26px;border-left:0;border-right:1px solid var(--t-primary)}
+.service-outsourcing.site-theme-v9 .info-card:last-child{border-right:0}
+.service-outsourcing.site-theme-v9 .action-box{text-align:left;border:0;border-top:4px double var(--t-primary);border-bottom:4px double var(--t-primary);background:transparent}.service-outsourcing.site-theme-v9 .action-box .btn-row{justify-content:flex-start}
+
+@media(max-width:640px){body[class*="site-theme-"] .page-hero{padding:78px 0 58px}body[class*="site-theme-"] .page-hero::after{width:80px;height:80px;right:-20px}body[class*="site-theme-"] .page-tabs .tabs-inner{justify-content:flex-start}body[class*="site-theme-"] .sub-content{padding-top:60px}.service-outsourcing.site-theme-v3 .lead-copy,.service-outsourcing.site-theme-v4 .sub-section:nth-of-type(even),.service-outsourcing.site-theme-v7 .lead-copy{padding:30px 22px}.service-outsourcing.site-theme-v3 .info-card:nth-child(even){transform:none}.service-outsourcing.site-theme-v4 .lead-copy{padding-left:34px}.service-outsourcing.site-theme-v9 .lead-copy{display:block}.service-outsourcing.site-theme-v9 .lead-copy .en{margin-bottom:18px}.service-outsourcing.site-theme-v9 .info-card{border-right:0}}
