@@ -311,3 +311,14 @@
 .talent-photo-block {
   background: radial-gradient(700px 520px at 65% 40%, #4a86c0, #24476e 55%, #16305a 100%) !important;
 }
+
+/* 구체도 보정: home-new.css의 .home-new .site-header(베이지)를 확실히 덮어씀 */
+.home-new .site-header { background: transparent; border-bottom: 0; box-shadow: none; }
+.home-new .site-header.scrolled {
+  background: rgba(11, 20, 38, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.home-new .site-header:hover, .home-new .site-header:focus-within { background: #14264a; }
+.home-new.theme-warm .site-header { background: rgba(251, 245, 238, 0.92); }
