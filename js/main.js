@@ -12,7 +12,17 @@
   var SITE_THEME = document.body.getAttribute("data-site-theme") ||
     new URLSearchParams(location.search).get("site") ||
     (themeMatch ? themeMatch[1] : "");
+  /* 시안 → 서브페이지 이동 시 테마 유지:
+     시안 페이지에서 테마를 기억해 두고, 테마 정보가 없는 서브페이지에서 복원 */
   if (/^v[1-9]$/.test(SITE_THEME)) {
+    try { localStorage.setItem("nexusn-site-theme", SITE_THEME); } catch (e) {}
+  } else {
+    try { SITE_THEME = localStorage.getItem("nexusn-site-theme") || ""; } catch (e) {}
+  }
+  /* 메뉴 링크에 ?site= 를 붙여 링크 공유 시에도 테마가 유지되게 함 */
+  var THEME_QS = /^v[1-9]$/.test(SITE_THEME) ? "?site=" + SITE_THEME : "";
+  /* 테마 CSS 주입은 서브페이지에서만 — 시안 메인(/vN/)은 자기 고유 스타일 유지 */
+  if (/^v[1-9]$/.test(SITE_THEME) && !themeMatch) {
     document.body.classList.add("site-theme-" + SITE_THEME);
     if (!document.querySelector('link[data-subpage-themes]')) {
       var themeCss = document.createElement("link");
@@ -94,15 +104,15 @@
       for (var i = index + 1; i < items.length && items[i].depth3; i += 1) children.push(items[i]);
       var active = isCurrent(it.href) ? " active" : "";
       if (!children.length) {
-        html += '<a class="' + active.trim() + '" href="' + ROOT + it.href + '">' + it.label + "</a>";
+        html += '<a class="' + active.trim() + '" href="' + ROOT + it.href + THEME_QS + '">' + it.label + "</a>";
         return;
       }
       var childActive = children.some(function (child) { return isCurrent(child.href); });
       var childLinks = children.map(function (child) {
-        return '<a class="depth3' + (isCurrent(child.href) ? " active" : "") + '" href="' + ROOT + child.href + '">' + child.label + "</a>";
+        return '<a class="depth3' + (isCurrent(child.href) ? " active" : "") + '" href="' + ROOT + child.href + THEME_QS + '">' + child.label + "</a>";
       }).join("");
       html += '<div class="nested-menu' + (childActive ? " open" : "") + '">' +
-        '<div class="nested-head"><a class="' + active.trim() + '" href="' + ROOT + it.href + '">' + it.label + '</a>' +
+        '<div class="nested-head"><a class="' + active.trim() + '" href="' + ROOT + it.href + THEME_QS + '">' + it.label + '</a>' +
         '<button type="button" aria-label="' + it.label + ' 하위 메뉴 열기" aria-expanded="' + (childActive ? "true" : "false") + '"><span></span></button></div>' +
         '<div class="nested-sub">' + childLinks + "</div></div>";
     });
@@ -122,7 +132,7 @@
       var dd = renderDepthMenu(items, false);
       return (
         '<li class="' + (groupActive ? "active" : "") + '">' +
-        '<a href="' + ROOT + items[0].href + '" data-toggle="dropdown">' + group.title + '<small>' + group.en + "</small></a>" +
+        '<a href="' + ROOT + items[0].href + THEME_QS + '" data-toggle="dropdown">' + group.title + '<small>' + group.en + "</small></a>" +
         '<div class="dropdown">' + dd + "</div></li>"
       );
     }).join("");
@@ -207,8 +217,8 @@
       '<div class="footer-top">' +
       '<a class="f-logo" href="' + HOME + '"><img src="' + ROOT + 'assets/brand/nexusn-logo.svg" alt="NEXUSN"></a>' +
       '<div class="f-links">' +
-      '<a class="em" href="' + ROOT + 'legal/privacy.html">개인정보처리방침</a>' +
-      '<a href="' + ROOT + 'legal/terms.html">이용약관</a>' +
+      '<a class="em" href="' + ROOT + 'legal/privacy.html' + THEME_QS + '">개인정보처리방침</a>' +
+      '<a href="' + ROOT + 'legal/terms.html' + THEME_QS + '">이용약관</a>' +
       "</div></div>" +
       "<address>" +
       "주식회사 넥서스엔 &nbsp;|&nbsp; 사업자등록번호 807-87-04034<br>" +
@@ -235,7 +245,7 @@
     });
     if (!group) return;
     var tabs = visibleItems(group).map(function (it) {
-      return '<a class="' + (isCurrent(it.href) ? "active" : "") + '" href="' + ROOT + it.href + '">' + it.label + "</a>";
+      return '<a class="' + (isCurrent(it.href) ? "active" : "") + '" href="' + ROOT + it.href + THEME_QS + '">' + it.label + "</a>";
     }).join("");
     el.className = "page-tabs";
     el.innerHTML = '<div class="container"><div class="tabs-inner">' + tabs + "</div></div>";
