@@ -321,3 +321,21 @@ body[class*="site-theme-"] .site-footer{background:var(--t-primary)}body[class*=
 .site-theme-v7 .board-list .b-badge{background:#e5eee5;color:#174f3e}
 .site-theme-v7 .greeting-quote .accent{color:#0d5c46}
 .site-theme-v7 .site-footer{background:#083b2d;border-radius:36px 36px 0 0}
+
+/* ---------- 시안 2 심화: 상세페이지도 사진 위주 화면 ---------- */
+/* 섹션별로 다른 사진 히어로 */
+.site-theme-v2.detail-about .page-hero{background:linear-gradient(rgba(7,27,51,.8),rgba(7,27,51,.8)),url("../assets/img/about-team.jpg") center/cover}
+.site-theme-v2.detail-services .page-hero{background:linear-gradient(rgba(7,27,51,.8),rgba(7,27,51,.8)),url("../assets/img/biz-warehouse.jpg") center/cover}
+.site-theme-v2.detail-recruit .page-hero{background:linear-gradient(rgba(7,27,51,.8),rgba(7,27,51,.8)),url("../assets/img/hero-team.jpg") center/cover}
+.site-theme-v2.detail-board .page-hero{background:linear-gradient(rgba(7,27,51,.8),rgba(7,27,51,.8)),url("../assets/img/hero-meeting.jpg") center/cover}
+.site-theme-v2 .page-hero{padding:130px 0 100px}
+/* 문의/다운로드 박스와 인재상 배너도 사진 배경으로 */
+.site-theme-v2 .action-box{background:linear-gradient(rgba(7,27,51,.86),rgba(7,27,51,.86)),url("../assets/img/hero-meeting.jpg") center/cover;border:none;border-top:3px solid #d4a74f;color:#fff}
+.site-theme-v2 .action-box h3{color:#fff}
+.site-theme-v2 .action-box p{color:rgba(255,255,255,.78)}
+.site-theme-v2 .action-box .notice-note{background:rgba(255,255,255,.12);color:#e8ded0}
+.site-theme-v2 .action-box .notice-note b{color:#d4a74f}
+.site-theme-v2 .talent-banner{background:linear-gradient(rgba(7,27,51,.78),rgba(7,27,51,.78)),url("../assets/img/talent-banner.jpg") center/cover fixed}
+.site-theme-v2 .mv-card{background:linear-gradient(rgba(7,27,51,.85),rgba(13,44,77,.85)),url("../assets/img/biz-consult.jpg") center/cover}
+.site-theme-v2 .mv-card.alt{background:linear-gradient(rgba(7,27,51,.85),rgba(13,44,77,.85)),url("../assets/img/biz-dispatch.jpg") center/cover}
+@media(max-width:1024px){.site-theme-v2 .talent-banner{background-attachment:scroll}}

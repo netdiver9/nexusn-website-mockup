@@ -171,3 +171,42 @@
 @media (prefers-reduced-motion: reduce) {
   .hero .slide, .hero .slide.current { transform: none; animation: none; }
 }
+
+/* ==========================================================================
+   사진 위주 화면 강화 — 모든 섹션 구간에 사진 배경이 흐르도록
+   ========================================================================== */
+
+/* WHY · 프로세스 섹션: 사진 배경 밴드 (다크 오버레이 + 패럴랙스) */
+.section.tinted {
+  background: linear-gradient(rgba(7, 27, 51, 0.86), rgba(7, 27, 51, 0.86)),
+    url("../assets/img/about-team.jpg") center / cover fixed;
+}
+.section.tinted:has(.process-flow) {
+  background: linear-gradient(rgba(7, 27, 51, 0.88), rgba(7, 27, 51, 0.88)),
+    url("../assets/img/hero-team.jpg") center / cover fixed;
+}
+.section.tinted .sec-head h2 { color: #fff; }
+.section.tinted .sec-head .eyebrow { color: var(--v2-gold, #d4a74f); }
+.section.tinted .sec-desc { color: rgba(255, 255, 255, 0.75); }
+
+/* 사진 밴드 위 강점 카드: 화이트 카드로 대비 */
+.section.tinted .why-card { background: rgba(255, 255, 255, 0.97); border: none; }
+
+/* 사진 밴드 위 프로세스: 흰 글자 + 흰 아이콘 원 */
+.section.tinted .process-step h3 { color: #fff; }
+.section.tinted .process-step p { color: rgba(255, 255, 255, 0.72); }
+.section.tinted .process-step .p-num { color: var(--v2-gold, #d4a74f); }
+.section.tinted .process-step .p-icon { background: #fff; border-color: transparent; }
+.section.tinted .process-arrow { color: rgba(255, 255, 255, 0.45); }
+
+/* 회사소개 사진을 더 크게 */
+.about-split { grid-template-columns: 1fr 1.3fr; }
+.about-split .a-photo img { aspect-ratio: 16 / 10; }
+
+/* iOS: fixed 미지원 대응 */
+@supports (-webkit-touch-callout: none) {
+  .section.tinted, .section.tinted:has(.process-flow) { background-attachment: scroll; }
+}
+@media (max-width: 1024px) {
+  .section.tinted, .section.tinted:has(.process-flow) { background-attachment: scroll; }
+}
