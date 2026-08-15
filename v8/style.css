@@ -16,3 +16,22 @@
 .image-2{background-image:url("../assets/img/design08-women-service-02.png")}
 .image-3{background-image:url("../assets/img/design08-women-service-03.png")}
 .people-photo{background-image:url("../assets/img/design08-people-bright-mixed.png")}
+
+/* 의미가 통하는 라인 아이콘 마크 — 네이비 원 + 골드 링 포인트 */
+.value-mark { position: relative; }
+.value-mark svg { display: block; }
+.value-mark::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border: 1px solid var(--v8-gold, #c49a54);
+  border-radius: 50%;
+  opacity: .55;
+  transition: inset .3s, opacity .3s;
+}
+.value:hover .value-mark::after { inset: -10px; opacity: 1; }
+.value:hover .value-mark { background: var(--v8-gold, #c49a54); }
+
+/* 프로세스 원: 문자 기호 → 의미 있는 라인 아이콘 */
+.process-grid b::before { content: none; }
+.process-grid b svg { display: block; color: var(--v8-gold); }

@@ -773,3 +773,6 @@ body.nav-open .mobile-nav { display: block; }
   stroke-width: 2.1;
   fill: rgba(224, 164, 88, 0.16);
 }
+
+/* 카운트업 span이 라벨 span 규칙(14px)에 걸리지 않도록 — 숫자 크기 복원 */
+.stat-band .stat b span { font-size: inherit; color: inherit; }
