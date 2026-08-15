@@ -11,7 +11,45 @@
 .concept-switcher a.active { background: var(--ink); color: #fff; }
 .theme-warm { --ink: #34241f; --acid: #ff805b; --paper: #fbf5ee; }
 .theme-dark { --ink: #141815; --acid: #caff3d; --paper: #f0f0e9; }
+.theme-minimal { --ink: #153b73; --acid: #d9e8ff; --paper: #fff; }
 .theme-warm .logo .logo-dot { color: #e55c37 !important; }
+.theme-minimal .logo .logo-dot { color: #2785e6 !important; }
+
+/* v4 - 따뜻하고 사람 중심적인 소프트 코퍼레이트 */
+.theme-warm .new-hero { margin: calc(var(--header-h) + 20px) 2% 0; width: 96%; height: calc(100vh - var(--header-h) - 40px); border-radius: 32px; }
+.theme-warm .new-hero .slide { left: 0; }
+.theme-warm .new-hero::after { background: linear-gradient(90deg,rgba(52,36,31,.92),rgba(52,36,31,.2)); }
+.theme-warm .new-hero h1,.theme-warm .new-section-head h2,.theme-warm .services-title h2,.theme-warm .talent-copy h2 { font-family: Georgia,"Times New Roman",serif; font-weight: 500; }
+.theme-warm .strength { margin: 10px; border: 0; border-radius: 24px; background: #fff; }
+.theme-warm .service-panels { gap: 18px; }
+.theme-warm .service-panel { border: 0; border-radius: 24px; }
+.theme-warm .new-talent { margin: 28px; border-radius: 32px; overflow: hidden; }
+
+/* v5 - 강한 대비의 에디토리얼 */
+.theme-dark .new-section-head h2,.theme-dark .services-title h2 { text-transform: uppercase; }
+.theme-dark .strength:nth-child(2) { transform: translateY(42px); }
+.theme-dark .service-panel:nth-child(2) { transform: translateY(-32px); }
+.theme-dark .new-talent { grid-template-columns: .8fr 1.2fr; }
+
+/* v6 - 밝고 정돈된 테크 HR */
+.theme-minimal .new-hero { height: 760px; min-height: 620px; background: #edf4ff; color: var(--ink); }
+.theme-minimal .new-hero .slide { left: 52%; border-radius: 0 0 0 80px; }
+.theme-minimal .new-hero::after { background: linear-gradient(90deg,#edf4ff 0 48%,transparent 66%); }
+.theme-minimal .hero-copy { color: var(--ink); }
+.theme-minimal .hero-kor { color: #5c6e86; }
+.theme-minimal .hero-side { color: #fff; }
+.theme-minimal .circle-link { left: 43%; }
+.theme-minimal .new-why { background: #fff; }
+.theme-minimal .strength-list { gap: 18px; margin-top: 30px; }
+.theme-minimal .strength { min-height: 350px; border: 1px solid #dce6f3; border-radius: 12px; }
+.theme-minimal .strength:first-child { border-left: 1px solid #dce6f3; }
+.theme-minimal .new-services { background: #edf4ff; color: var(--ink); }
+.theme-minimal .services-title span,.theme-minimal .service-panel small { color: #287fd2; }
+.theme-minimal .services-title p { color: #61728a; }
+.theme-minimal .service-panels { min-height: 560px; gap: 16px; }
+.theme-minimal .service-panel { border: 0; border-radius: 12px; }
+.theme-minimal .new-process { background: #fff; }
+.theme-minimal .new-talent { background: #edf4ff; }
 
 .home-new .new-hero { height: calc(100vh - var(--header-h)); min-height: 650px; margin-top: var(--header-h); background: var(--ink); }
 .home-new .new-hero .slide { left: 38%; background-position: center; filter: saturate(.75); }
