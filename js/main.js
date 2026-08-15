@@ -21,6 +21,11 @@
   }
   /* 메뉴 링크에 ?site= 를 붙여 링크 공유 시에도 테마가 유지되게 함 */
   var THEME_QS = /^v[1-9]$/.test(SITE_THEME) ? "?site=" + SITE_THEME : "";
+  /* 상세페이지 종류를 body class로 노출해 페이지별 구성요소도 시안 테마에 맞춤 */
+  var detailMatch = location.pathname.match(/\/(about|services|recruit|board)\/([^/?#]+)\.html$/);
+  if (detailMatch) {
+    document.body.classList.add("detail-page", "detail-" + detailMatch[1], "page-" + detailMatch[2]);
+  }
   /* 테마 CSS 주입은 서브페이지에서만 — 시안 메인(/vN/)은 자기 고유 스타일 유지 */
   if (/^v[1-9]$/.test(SITE_THEME) && !themeMatch) {
     document.body.classList.add("site-theme-" + SITE_THEME);

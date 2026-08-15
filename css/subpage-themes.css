@@ -140,4 +140,134 @@ body[class*="site-theme-"] .site-footer{background:var(--t-primary)}body[class*=
 .service-outsourcing.site-theme-v9 .info-card:last-child{border-right:0}
 .service-outsourcing.site-theme-v9 .action-box{text-align:left;border:0;border-top:4px double var(--t-primary);border-bottom:4px double var(--t-primary);background:transparent}.service-outsourcing.site-theme-v9 .action-box .btn-row{justify-content:flex-start}
 
-@media(max-width:640px){body[class*="site-theme-"] .page-hero{padding:78px 0 58px}body[class*="site-theme-"] .page-hero::after{width:80px;height:80px;right:-20px}body[class*="site-theme-"] .page-tabs .tabs-inner{justify-content:flex-start}body[class*="site-theme-"] .sub-content{padding-top:60px}.service-outsourcing.site-theme-v3 .lead-copy,.service-outsourcing.site-theme-v4 .sub-section:nth-of-type(even),.service-outsourcing.site-theme-v7 .lead-copy{padding:30px 22px}.service-outsourcing.site-theme-v3 .info-card:nth-child(even){transform:none}.service-outsourcing.site-theme-v4 .lead-copy{padding-left:34px}.service-outsourcing.site-theme-v9 .lead-copy{display:block}.service-outsourcing.site-theme-v9 .lead-copy .en{margin-bottom:18px}.service-outsourcing.site-theme-v9 .info-card{border-right:0}}
+/* 모든 상세페이지 공통 컴포넌트: 선택한 홈페이지의 형태·간격·상호작용 유지 */
+.detail-page[class*="site-theme-"] .sub-section{counter-increment:detail-section}
+.detail-page[class*="site-theme-"] .sub-content>.container{counter-reset:detail-section}
+.detail-page[class*="site-theme-"] .sub-section>h2{position:relative}
+.detail-page[class*="site-theme-"] .sub-section>h2::before{content:"0" counter(detail-section);display:block;margin-bottom:8px;font:800 11px/1 var(--font);letter-spacing:.16em}
+.detail-page[class*="site-theme-"] .mv-card,.detail-page[class*="site-theme-"] .process-step,.detail-page[class*="site-theme-"] .action-box,.detail-page[class*="site-theme-"] .board-list,.detail-page[class*="site-theme-"] .map-box{border-color:color-mix(in srgb,var(--t-primary) 16%,transparent);border-radius:var(--t-radius)}
+.detail-page[class*="site-theme-"] .mv-card h3,.detail-page[class*="site-theme-"] .process-step h3,.detail-page[class*="site-theme-"] .action-box h3,.detail-page[class*="site-theme-"] .b-title{color:var(--t-primary)}
+.detail-page[class*="site-theme-"] .mv-label,.detail-page[class*="site-theme-"] .b-badge,.detail-page[class*="site-theme-"] .j-badge{color:var(--t-accent)}
+.detail-page[class*="site-theme-"] .process-step .p-icon{background:var(--t-soft);color:var(--t-primary)}
+.detail-page[class*="site-theme-"] .process-arrow{color:var(--t-accent)}
+.detail-page[class*="site-theme-"] .check-list li::before{background:var(--t-accent)}
+.detail-page[class*="site-theme-"] .notice-note,.detail-page[class*="site-theme-"] .action-box{background:var(--t-soft)}
+.detail-page[class*="site-theme-"] .board-list{overflow:hidden;border-top:2px solid var(--t-primary)}
+.detail-page[class*="site-theme-"] .board-list>li:hover{background:var(--t-soft)}
+
+/* v1 그래픽 코퍼레이트 */
+.detail-page.site-theme-v1 .lead-copy{padding:38px 42px;background:#fff;border-left:6px solid var(--t-accent)}
+.detail-page.site-theme-v1 .mv-grid,.detail-page.site-theme-v1 .card-grid{gap:1px;background:var(--t-primary);border:1px solid var(--t-primary)}
+.detail-page.site-theme-v1 .mv-card,.detail-page.site-theme-v1 .info-card{border:0;border-radius:0;background:#fff}
+.detail-page.site-theme-v1 .process-flow{padding:32px;background:#fff;border-top:4px solid var(--t-accent)}
+.detail-page.site-theme-v1 .action-box,.detail-page.site-theme-v1 .notice-note{border-radius:0;border-left:7px solid var(--t-accent)}
+
+/* v2 포토 코퍼레이트 */
+.detail-page.site-theme-v2 .lead-copy{text-align:center;margin-inline:auto}.detail-page.site-theme-v2 .lead-copy::after{content:"◆";display:block;margin-top:28px;color:var(--t-accent);font-size:12px}
+.detail-page.site-theme-v2 .sub-section>h2{text-align:center}.detail-page.site-theme-v2 .sub-section>h2::after{content:"";display:block;width:44px;height:1px;margin:18px auto;background:var(--t-accent)}
+.detail-page.site-theme-v2 .mv-card,.detail-page.site-theme-v2 .info-card,.detail-page.site-theme-v2 .job-card{text-align:center;border-width:0 0 1px;border-color:var(--t-accent)}
+.detail-page.site-theme-v2 .process-flow{border-top:1px solid var(--t-accent);border-bottom:1px solid var(--t-accent);padding:38px 0}
+.detail-page.site-theme-v2 .action-box{background:transparent;border:1px solid var(--t-accent)}
+
+/* v3 모던 휴먼 */
+.detail-page.site-theme-v3 .lead-copy{padding:38px 42px;background:#fff;border-radius:28px;box-shadow:0 18px 50px rgba(16,43,63,.08)}
+.detail-page.site-theme-v3 .sub-section:nth-of-type(even){padding:48px;border-radius:32px;background:var(--t-soft)}
+.detail-page.site-theme-v3 .mv-card,.detail-page.site-theme-v3 .process-step,.detail-page.site-theme-v3 .notice-note{border:0;background:#fff;box-shadow:0 12px 30px rgba(16,43,63,.07)}
+.detail-page.site-theme-v3 .action-box{border:0;border-radius:28px;background:linear-gradient(120deg,var(--t-soft),#fff)}
+.detail-page.site-theme-v3 .board-list{border:0;box-shadow:0 16px 45px rgba(16,43,63,.08)}
+
+/* v4 웜 코퍼레이트 */
+.detail-page.site-theme-v4 .lead-copy{padding:46px 54px;border-radius:42px;background:#fff3e9}
+.detail-page.site-theme-v4 .sub-section:nth-of-type(odd){padding:52px;border-radius:46px;background:#fff}
+.detail-page.site-theme-v4 .mv-card,.detail-page.site-theme-v4 .process-step,.detail-page.site-theme-v4 .job-card{border:0;background:#fff;box-shadow:0 16px 40px rgba(73,49,42,.08)}
+.detail-page.site-theme-v4 .info-card .icon-wrap,.detail-page.site-theme-v4 .p-icon{border-radius:50% 50% 42% 58%}
+.detail-page.site-theme-v4 .action-box{border:0;border-radius:36px;background:var(--t-primary)}.detail-page.site-theme-v4 .action-box h3,.detail-page.site-theme-v4 .action-box p{color:#fff}
+
+/* v5 볼드 에디토리얼 */
+.detail-page.site-theme-v5 .lead-copy{max-width:none;padding-bottom:34px;border-bottom:8px solid var(--t-primary)}
+.detail-page.site-theme-v5 .lead-copy .en{display:inline-block;padding:7px 12px;background:var(--t-accent);color:var(--t-primary)}
+.detail-page.site-theme-v5 .mv-card,.detail-page.site-theme-v5 .process-step,.detail-page.site-theme-v5 .job-card,.detail-page.site-theme-v5 .download-box,.detail-page.site-theme-v5 .notice-note{border:2px solid var(--t-primary);border-radius:0;box-shadow:7px 7px 0 var(--t-primary);background:#fff}
+.detail-page.site-theme-v5 .board-list,.detail-page.site-theme-v5 .info-table{border:3px solid var(--t-primary);border-radius:0}
+.detail-page.site-theme-v5 .action-box{border:3px solid var(--t-primary);border-radius:0;box-shadow:10px 10px 0 var(--t-accent);background:#fff}
+
+/* v6 미니멀 테크 */
+.detail-page.site-theme-v6 .lead-copy{padding:34px;border:1px solid #b9d6fa;background:linear-gradient(135deg,#f4f9ff,#fff)}
+.detail-page.site-theme-v6 .sub-section{padding-top:28px;border-top:1px solid #cbdcf1}
+.detail-page.site-theme-v6 .mv-card,.detail-page.site-theme-v6 .process-step,.detail-page.site-theme-v6 .job-card{border-top:4px solid var(--t-accent);box-shadow:none}
+.detail-page.site-theme-v6 .board-list{border:1px solid #cbdcf1;border-top:4px solid var(--t-accent)}
+.detail-page.site-theme-v6 .action-box{background:linear-gradient(100deg,#153b73,#2785e6);color:#fff}.detail-page.site-theme-v6 .action-box h3,.detail-page.site-theme-v6 .action-box p{color:#fff}.detail-page.site-theme-v6 .action-box .btn-outline{border-color:#fff;color:#fff}
+
+/* v7 그린 그로스 */
+.detail-page.site-theme-v7 .lead-copy{padding:48px;border-radius:72px 72px 20px 20px;background:#fff;text-align:center}
+.detail-page.site-theme-v7 .mv-card,.detail-page.site-theme-v7 .info-card,.detail-page.site-theme-v7 .process-step,.detail-page.site-theme-v7 .job-card{border:0;background:#fff;box-shadow:0 20px 50px rgba(23,79,62,.09)}
+.detail-page.site-theme-v7 .card-grid>*:nth-child(odd){border-radius:70px 70px 24px 24px}.detail-page.site-theme-v7 .card-grid>*:nth-child(even){border-radius:24px 24px 70px 70px}
+.detail-page.site-theme-v7 .action-box{border:0;border-radius:60px;background:#e5eee5}
+
+/* v8 트러스트 앤 피플 */
+.detail-page.site-theme-v8 .lead-copy{text-align:center;margin-inline:auto;padding:48px 28px;border-top:1px solid var(--t-accent);border-bottom:1px solid var(--t-accent)}
+.detail-page.site-theme-v8 .sub-section>h2{display:flex;align-items:center;gap:18px}.detail-page.site-theme-v8 .sub-section>h2::after{content:"";height:1px;flex:1;background:var(--t-accent)}
+.detail-page.site-theme-v8 .mv-card,.detail-page.site-theme-v8 .info-card,.detail-page.site-theme-v8 .process-step,.detail-page.site-theme-v8 .job-card{border:1px solid #d8c9ae;border-top:4px solid var(--t-primary)}
+.detail-page.site-theme-v8 .board-list{border:1px solid #d8c9ae;border-top:4px solid var(--t-primary)}
+.detail-page.site-theme-v8 .action-box{border:1px solid var(--t-accent);background:var(--t-primary)}.detail-page.site-theme-v8 .action-box h3,.detail-page.site-theme-v8 .action-box p{color:#fff}.detail-page.site-theme-v8 .action-box .btn-solid{background:var(--t-accent);border-color:var(--t-accent);color:var(--t-primary)}.detail-page.site-theme-v8 .action-box .btn-outline{border-color:#fff;color:#fff}
+
+/* v9 피플 스토리즈 */
+.detail-page.site-theme-v9 .lead-copy{max-width:none;border-top:4px double var(--t-primary);border-bottom:4px double var(--t-primary);padding:44px 0}
+.detail-page.site-theme-v9 .sub-section>h2{font-size:clamp(30px,4vw,48px)}
+.detail-page.site-theme-v9 .mv-grid,.detail-page.site-theme-v9 .card-grid{gap:0}.detail-page.site-theme-v9 .mv-card,.detail-page.site-theme-v9 .info-card,.detail-page.site-theme-v9 .process-step,.detail-page.site-theme-v9 .job-card{border:0;border-right:1px solid var(--t-primary);border-top:1px solid var(--t-primary);border-bottom:1px solid var(--t-primary);background:transparent}
+.detail-page.site-theme-v9 .mv-grid>*:last-child,.detail-page.site-theme-v9 .card-grid>*:last-child{border-right:0}
+.detail-page.site-theme-v9 .board-list{border:0;border-top:4px double var(--t-primary);border-bottom:4px double var(--t-primary);border-radius:0}
+.detail-page.site-theme-v9 .action-box{border:0;border-top:4px double var(--t-primary);border-bottom:4px double var(--t-primary);border-radius:0;background:transparent;text-align:left}.detail-page.site-theme-v9 .action-box .btn-row{justify-content:flex-start}
+
+@media(max-width:640px){body[class*="site-theme-"] .page-hero{padding:78px 0 58px}body[class*="site-theme-"] .page-hero::after{width:80px;height:80px;right:-20px}body[class*="site-theme-"] .page-tabs .tabs-inner{justify-content:flex-start}body[class*="site-theme-"] .sub-content{padding-top:60px}.service-outsourcing.site-theme-v3 .lead-copy,.service-outsourcing.site-theme-v4 .sub-section:nth-of-type(even),.service-outsourcing.site-theme-v7 .lead-copy{padding:30px 22px}.service-outsourcing.site-theme-v3 .info-card:nth-child(even){transform:none}.service-outsourcing.site-theme-v4 .lead-copy{padding-left:34px}.service-outsourcing.site-theme-v9 .lead-copy{display:block}.service-outsourcing.site-theme-v9 .lead-copy .en{margin-bottom:18px}.service-outsourcing.site-theme-v9 .info-card{border-right:0}.detail-page.site-theme-v3 .lead-copy,.detail-page.site-theme-v3 .sub-section:nth-of-type(even),.detail-page.site-theme-v4 .lead-copy,.detail-page.site-theme-v4 .sub-section:nth-of-type(odd),.detail-page.site-theme-v7 .lead-copy,.detail-page.site-theme-v8 .lead-copy{padding:28px 20px}.detail-page.site-theme-v9 .mv-card,.detail-page.site-theme-v9 .info-card,.detail-page.site-theme-v9 .process-step,.detail-page.site-theme-v9 .job-card{border-right:0}}
+
+/* ==========================================================================
+   시안 1 · 2 · 7 심화 스타일 — 상세페이지에 각 시안의 디자인 정체성 반영
+   ========================================================================== */
+
+/* ---------- 시안 1 : 그래픽 에디토리얼 (좌측 정렬 빅 타이포 + 도트 텍스처) ---------- */
+.site-theme-v1 .page-hero{position:relative;text-align:left;background:#102b45;overflow:hidden}
+.site-theme-v1 .page-hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:26px 26px;pointer-events:none}
+.site-theme-v1 .page-hero>*{position:relative;width:min(1180px,92%);margin-left:auto;margin-right:auto}
+.site-theme-v1 .page-hero h1{font-size:clamp(40px,6vw,72px);letter-spacing:-.04em;line-height:1.1}
+.site-theme-v1 .page-hero .p-eyebrow{letter-spacing:.3em}
+.site-theme-v1 .page-hero .breadcrumb{margin-top:22px}
+.site-theme-v1 .sub-section>h2{letter-spacing:-.02em}
+.site-theme-v1 .lead-copy h2{letter-spacing:-.03em}
+
+/* ---------- 시안 2 : 포토 코퍼레이트 (사진 히어로 + 다크 네이비 헤더 + 골드) ---------- */
+.site-theme-v2 .site-header{background:rgba(7,27,51,.96);border-bottom-color:rgba(255,255,255,.12)}
+.site-theme-v2 .site-header .gnb>li>a{color:#fff}
+.site-theme-v2 .site-header .gnb>li>a small{color:rgba(255,255,255,.48)}
+.site-theme-v2 .site-header .gnb>li>a:hover,.site-theme-v2 .site-header .gnb>li.open>a,.site-theme-v2 .site-header .gnb>li.active>a{color:#d4a74f}
+.site-theme-v2 .site-header .logo img{filter:brightness(0) invert(1)}
+.site-theme-v2 .site-header .nav-toggle span{background:#fff}
+.site-theme-v2 .page-hero{background:linear-gradient(rgba(7,27,51,.82),rgba(7,27,51,.82)),url("../assets/img/hero-office.jpg") center/cover}
+.site-theme-v2 .page-hero::after{display:none}
+.site-theme-v2 .page-hero .p-eyebrow{letter-spacing:.3em}
+.site-theme-v2 .page-hero h1{font-weight:500}
+.site-theme-v2 .sub-section>h2{font-weight:500;border-left:none;padding-left:0}
+.site-theme-v2 .sub-section>h2::after{content:"";display:block;width:52px;height:2px;background:#d4a74f;margin-top:14px}
+.site-theme-v2 .sub-section>.s-desc{padding-left:0}
+.site-theme-v2 .info-card .icon-wrap,.site-theme-v2 .contact-item .c-icon,.site-theme-v2 .process-step .p-icon{border-radius:0}
+.site-theme-v2 .process-step .p-icon{border:1px solid #d4a74f;color:#9a712a;background:#fff}
+.site-theme-v2 .p-num,.site-theme-v2 .process-step .p-num{color:#9a712a}
+.site-theme-v2 .greeting-quote .accent{color:#9a712a}
+.site-theme-v2 .action-box{border-top:3px solid #d4a74f}
+
+/* ---------- 시안 7 : Green Growth (크림 배경 + 아치 모티브 + 앰버 포인트) ---------- */
+.site-theme-v7 .page-hero{background:linear-gradient(115deg,rgba(8,59,45,.92),rgba(13,92,70,.78)),radial-gradient(900px 500px at 80% 30%,#1e7a5e,#0d4635 55%,#08301f)}
+.site-theme-v7 .page-hero .p-eyebrow{color:#e6c08c}
+.site-theme-v7 .page-hero h1{letter-spacing:-.02em}
+.site-theme-v7 .section.tinted{background:#edf1ea}
+.site-theme-v7 .btn{border-radius:999px}
+.site-theme-v7 .sub-section>h2{border-left-color:#dd9c67}
+.site-theme-v7 .info-card .icon-wrap,.site-theme-v7 .why-card .icon-wrap,.site-theme-v7 .contact-item .c-icon{border-radius:999px 999px 14px 14px;background:#e5eee5;color:#174f3e}
+.site-theme-v7 .process-step .p-icon{border-radius:999px 999px 14px 14px;background:#fff;border-color:#dfe7dc;color:#174f3e;box-shadow:0 8px 22px rgba(13,92,70,.1)}
+.site-theme-v7 .p-num,.site-theme-v7 .process-step .p-num{color:#c07b3a}
+.site-theme-v7 .lead-copy .en,.site-theme-v7 .sec-head .eyebrow{color:#c07b3a}
+.site-theme-v7 .info-card,.site-theme-v7 .job-card,.site-theme-v7 .action-box,.site-theme-v7 .contact-item,.site-theme-v7 .map-box,.site-theme-v7 .notice-note{border-radius:24px}
+.site-theme-v7 .talent-banner,.site-theme-v7 .mv-card{border-radius:32px;background:linear-gradient(135deg,#0d5c46,#174f3e)}
+.site-theme-v7 .mv-card.alt{background:linear-gradient(135deg,#083b2d,#1e6b52)}
+.site-theme-v7 .board-list .b-badge{background:#e5eee5;color:#174f3e}
+.site-theme-v7 .greeting-quote .accent{color:#0d5c46}
+.site-theme-v7 .site-footer{background:#083b2d;border-radius:36px 36px 0 0}
