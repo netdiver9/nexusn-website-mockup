@@ -23,7 +23,7 @@
 }
 .hero .slide-3 {
   background-image: linear-gradient(100deg, rgba(8, 20, 40, 0.78) 20%, rgba(8, 20, 40, 0.3) 70%),
-    url("../assets/img/hero-team.jpg");
+    url("../assets/img/v2-hero-3.jpg");
 }
 .hero::after { display: none; } /* 도트 패턴 제거 — 사진 그대로 노출 */
 .hero .hero-eyebrow { color: var(--v2-gold); letter-spacing: .2em; text-transform: uppercase; }
@@ -183,7 +183,7 @@
 }
 .section.tinted:has(.process-flow) {
   background: linear-gradient(rgba(7, 27, 51, 0.88), rgba(7, 27, 51, 0.88)),
-    url("../assets/img/hero-team.jpg") center / cover fixed;
+    url("../assets/img/v2-hero-3.jpg") center / cover fixed;
 }
 .section.tinted .sec-head h2 { color: #fff; }
 .section.tinted .sec-head .eyebrow { color: var(--v2-gold, #d4a74f); }
@@ -245,7 +245,7 @@
 }
 .hero .slide-3 {
   background-image: linear-gradient(100deg, rgba(8, 20, 40, 0.52) 12%, rgba(8, 20, 40, 0.08) 62%),
-    url("../assets/img/hero-team.jpg");
+    url("../assets/img/v2-hero-3.jpg");
 }
 .hero h1, .hero .hero-eyebrow { text-shadow: 0 2px 24px rgba(7, 27, 51, 0.55); }
 
