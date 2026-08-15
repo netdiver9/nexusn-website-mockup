@@ -183,6 +183,23 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   }
   body.v9 .site-header .header-inner,
   body.site-theme-v9 .site-header .header-inner { position: relative; z-index: 2; }
+  body.v9 .site-header .logo,
+  body.site-theme-v9 .site-header .logo { gap: 16px; }
+  body.v9 .site-header .logo img,
+  body.site-theme-v9 .site-header .logo img {
+    width: 138px;
+    filter: brightness(0) saturate(100%) invert(20%) sepia(27%) saturate(2300%) hue-rotate(294deg) brightness(86%) contrast(91%);
+  }
+  body.v9 .site-header .logo::after,
+  body.site-theme-v9 .site-header .logo::after {
+    content: "NEXUSN JOURNAL";
+    padding-left: 16px;
+    border-left: 1px solid #aa9683;
+    color: #6e2637;
+    font: 700 9px/1.4 Georgia, "Times New Roman", serif;
+    letter-spacing: .18em;
+    white-space: nowrap;
+  }
   body.v9 .gnb .dropdown,
   body.site-theme-v9 .gnb .dropdown { display: none !important; }
   body.v9 .gnb > li > a,
@@ -245,6 +262,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .v9-mega-column a.depth3::before { content: "—"; position: absolute; left: 0; color: #c98e8d; }
   .v9-mega-note { align-self: end; margin: 0; color: #756a60; font: 10px/1.7 Georgia, serif; letter-spacing: .12em; }
   .v9-mega-note b { color: #6e2637; }
+}
+
+@media (max-width: 640px) {
+  body.v9 .site-header .logo::after,
+  body.site-theme-v9 .site-header .logo::after { display: none; }
+  body.v9 .site-header .logo img,
+  body.site-theme-v9 .site-header .logo img { width: 124px; }
 }
 
 /* 모바일 햄버거 */
