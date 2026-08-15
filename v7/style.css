@@ -611,7 +611,7 @@ body.nav-open .mobile-nav { display: block; }
 .talent .t-photo {
   aspect-ratio: 4 / 4.6;
   border-radius: var(--arch);
-  background: url("../assets/img/v7-talent.jpg") center / cover;
+  background: url("../assets/img/design07-people-bright.png") center / cover;
   min-height: 320px;
   position: relative;
 }

@@ -97,8 +97,8 @@
   padding: clamp(90px, 12vw, 150px) 0;
   color: var(--white);
   text-align: center;
-  background-image: linear-gradient(rgba(9, 24, 48, 0.72), rgba(9, 24, 48, 0.72)),
-    url("../assets/img/talent-banner.jpg");
+  background-image: linear-gradient(rgba(9, 24, 48, 0.42), rgba(9, 24, 48, 0.42)),
+    url("../assets/img/design02-people-bright.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
