@@ -140,9 +140,9 @@
 .theme-warm .new-hero .slide-1,.theme-warm .talent-photo-block{background-image:linear-gradient(90deg,rgba(52,36,31,.88),rgba(52,36,31,.05)),url("../assets/img/design04-warm-people.png")}
 .theme-warm .new-hero .slide-2{background-image:linear-gradient(90deg,rgba(52,36,31,.88),rgba(52,36,31,.05)),url("../assets/img/design04-warm-people-02.png")}
 .theme-warm .new-hero .slide-3{background-image:linear-gradient(90deg,rgba(52,36,31,.88),rgba(52,36,31,.05)),url("../assets/img/design04-warm-people-03.png")}
-.theme-dark .new-hero .slide-1,.theme-dark .talent-photo-block{background-image:linear-gradient(90deg,#141815 0%,rgba(20,24,21,.15) 48%),url("../assets/img/design05-bold-operations.png")}
-.theme-dark .new-hero .slide-2{background-image:linear-gradient(90deg,#141815 0%,rgba(20,24,21,.15) 48%),url("../assets/img/design05-bold-operations-02.png")}
-.theme-dark .new-hero .slide-3{background-image:linear-gradient(90deg,#141815 0%,rgba(20,24,21,.15) 48%),url("../assets/img/design05-bold-operations-03.png")}
+.theme-dark .new-hero .slide-1{background-image:linear-gradient(90deg,#141815 0%,rgba(20,24,21,.08) 48%),url("../assets/img/design05-office-hero-01.jpg")}
+.theme-dark .new-hero .slide-2{background-image:linear-gradient(90deg,#141815 0%,rgba(20,24,21,.08) 48%),url("../assets/img/design05-office-hero-02.jpg")}
+.theme-dark .new-hero .slide-3{background-image:linear-gradient(90deg,#141815 0%,rgba(20,24,21,.08) 48%),url("../assets/img/design05-office-hero-03.jpg")}
 .theme-minimal .new-hero .slide-1,.theme-minimal .talent-photo-block{background-image:linear-gradient(90deg,#edf4ff 0%,rgba(237,244,255,.05) 48%),url("../assets/img/design06-tech-analytics.png")}
 .theme-minimal .new-hero .slide-2{background-image:linear-gradient(90deg,#edf4ff 0%,rgba(237,244,255,.05) 48%),url("../assets/img/design06-tech-analytics-02.png")}
 .theme-minimal .new-hero .slide-3{background-image:linear-gradient(90deg,#edf4ff 0%,rgba(237,244,255,.05) 48%),url("../assets/img/design06-tech-analytics-03.png")}
