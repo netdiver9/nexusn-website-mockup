@@ -182,3 +182,39 @@
   .talent-photo-block { min-height: 420px; }
   .talent-photo-block .tp-chip-1 { top: 10%; left: 8%; }
 }
+
+/* ==========================================================================
+   최신 트렌드 헤더 — 메뉴가 분리된 바 없이 히어로 위에 투명하게 얹힘
+   ========================================================================== */
+.home-new .new-hero { margin-top: 0; height: 100vh; }
+.site-header { background: transparent; border-bottom: 0; box-shadow: none; }
+.site-header .gnb > li > a { color: #fff; }
+.site-header .gnb > li > a small { color: rgba(255, 255, 255, 0.5); }
+.site-header .gnb > li > a:hover,
+.site-header .gnb > li.open > a,
+.site-header .gnb > li.active > a { color: #9db8ff; }
+.site-header .logo img { filter: brightness(0) invert(1); }
+.site-header .nav-toggle span { background: #fff; }
+.site-header.scrolled {
+  background: rgba(11, 20, 38, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* 상단 메뉴 가독성 스크림 */
+.home-new .new-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 160px;
+  background: linear-gradient(to bottom, rgba(8, 20, 40, 0.55), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* warm 테마(B)는 히어로가 카드형이라 밝은 헤더 유지 */
+.theme-warm .site-header { background: rgba(251, 245, 238, 0.92); }
+.theme-warm .site-header .gnb > li > a { color: #49312a; }
+.theme-warm .site-header .gnb > li > a small { color: #a08b80; }
+.theme-warm .site-header .logo img { filter: none; }
+.theme-warm .site-header .nav-toggle span { background: #49312a; }
