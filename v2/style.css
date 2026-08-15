@@ -210,3 +210,8 @@
 @media (max-width: 1024px) {
   .section.tinted, .section.tinted:has(.process-flow) { background-attachment: scroll; }
 }
+
+/* 시안 2 아이콘 언어: 얇고 우아한 획 + 골드 */
+.why-card .icon-wrap, .contact-item .c-icon { background: #f3ecdc; color: #9a712a; }
+.why-card:hover .icon-wrap { background: #071b33; color: #d4a74f; }
+.why-card .icon-wrap svg, .process-step .p-icon svg, .contact-item .c-icon svg { stroke-width: 1.15; }

@@ -767,3 +767,9 @@ body.nav-open .mobile-nav { display: block; }
 @media (prefers-reduced-motion: reduce) {
   .hero .slide, .hero .slide.current { transform: none; animation: none; }
 }
+
+/* 시안 7 아이콘 언어: 두껍고 둥근 획 + 앰버 듀오톤 */
+.icon-arch svg, .p-icon svg, .c-icon svg, .ab-icon svg {
+  stroke-width: 2.1;
+  fill: rgba(224, 164, 88, 0.16);
+}

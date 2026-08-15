@@ -108,3 +108,10 @@
   .process-head { grid-template-columns: 1fr; align-items: start; }
   .process-head p { justify-self: start; text-align: left; }
 }
+
+/* 시안 1 아이콘 언어: 가는 획 + 각진 마감 */
+.strength-icon svg, .p-ic svg {
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-width: 1.4;
+}
