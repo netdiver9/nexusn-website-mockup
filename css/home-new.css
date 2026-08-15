@@ -156,3 +156,20 @@
 .theme-warm .talent-photo-block{background-image:url("../assets/img/design04-people-bright.png")}
 .theme-dark .talent-photo-block{background-image:url("../assets/img/design05-people-bright.png")}
 .theme-minimal .talent-photo-block{background-image:url("../assets/img/design06-people-bright.png")}
+
+/* v3–v6 mobile layout polish */
+@media (max-width: 640px) {
+  .home-new .container, .home-new .wide-wrap { width: calc(100% - 32px); max-width: 100%; }
+  .home-new .hero-frame { width: calc(100% - 32px); max-width: none; }
+  .home-new .new-section-head, .home-new .services-title { gap: 18px; padding-bottom: 42px; }
+  .home-new .strength, .home-new .service-panel { padding: 28px 22px; }
+  .home-new .process-track > div { padding: 26px 20px; }
+  .home-new .contact-panel dl > div { grid-template-columns: 64px minmax(0, 1fr); gap: 10px; }
+  .home-new .contact-panel dd { min-width: 0; overflow-wrap: anywhere; }
+  .home-new .site-footer .f-links { display: flex; flex-wrap: wrap; gap: 10px 16px; }
+}
+
+@media (max-width: 420px) {
+  .home-new .new-hero h1 { font-size: clamp(34px, 11vw, 46px); }
+  .home-new .hero-frame { width: calc(100% - 24px); }
+}

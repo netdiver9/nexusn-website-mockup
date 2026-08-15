@@ -306,3 +306,13 @@
   .photo-wide { background-attachment: scroll; height: 60vh; }
   .biz-card { min-height: 420px; }
 }
+
+@media (max-width: 640px) {
+  body { overflow-x: hidden; }
+  .container, .hero-inner, .section-inner { width: calc(100% - 32px); max-width: 100%; }
+  .hero-title { font-size: clamp(36px, 11vw, 52px); overflow-wrap: anywhere; }
+  .photo-wide { height: 52vh; min-height: 360px; background-attachment: scroll; }
+  .biz-card { min-height: 0; padding: 30px 22px; }
+  .process-grid, .contact-grid { grid-template-columns: 1fr; }
+  .footer-links, .site-footer .f-links { flex-wrap: wrap; gap: 10px 16px; }
+}

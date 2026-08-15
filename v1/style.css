@@ -322,3 +322,12 @@
 }
 .home-new .site-header:hover, .home-new .site-header:focus-within { background: #14264a; }
 .home-new.theme-warm .site-header { background: rgba(251, 245, 238, 0.92); }
+
+@media (max-width: 640px) {
+  .home-new { overflow-x: hidden; }
+  .home-new .container, .home-new .wide-wrap, .home-new .hero-frame { width: calc(100% - 32px); max-width: 100%; }
+  .home-new .new-hero h1 { font-size: clamp(36px, 11vw, 50px); line-height: 1.08; }
+  .home-new .strength, .home-new .service-panel, .home-new .process-track > div { min-width: 0; padding-left: 22px; padding-right: 22px; }
+  .home-new .contact-panel dl > div { grid-template-columns: 64px minmax(0, 1fr); }
+  .home-new .site-footer .f-links { flex-wrap: wrap; gap: 10px 16px; }
+}

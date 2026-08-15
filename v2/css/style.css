@@ -1081,3 +1081,20 @@ body[data-root="./"] .hero .btn-light:hover { background: #fff; border-color: #f
   .sub-content { padding: 60px 0 80px; }
   .board-list .b-badge { display: none; }
 }
+
+@media (max-width: 640px) {
+  html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+  body { overflow-wrap: anywhere; }
+  img, svg, video, iframe { max-width: 100%; }
+  .container, .hero .hero-inner, .page-hero .container { width: calc(100% - 32px); }
+  .site-header .header-inner, .header-inner, .contact-wrap, .contact-simple-grid { min-width: 0; }
+  .nav-toggle { flex: 0 0 44px; width: 44px; height: 44px; }
+  .mobile-nav { overflow-y: auto; padding-bottom: max(28px, env(safe-area-inset-bottom)); }
+  .mobile-nav .m-group > button, .mobile-nav .m-sub a { min-height: 44px; }
+  .hero-actions, .btn-row, .map-links, .site-footer .f-links { flex-wrap: wrap; }
+  .process-arrow { display: none; }
+  .contact-form { padding: 28px 22px; }
+  .map-box, .contact-map, .map-frame { min-height: 300px; }
+  .site-footer { padding: 44px 0 30px; }
+  .page-tabs, .tab-list, .table-scroll { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}

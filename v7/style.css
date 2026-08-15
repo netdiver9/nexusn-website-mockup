@@ -776,3 +776,17 @@ body.nav-open .mobile-nav { display: block; }
 
 /* 카운트업 span이 라벨 span 규칙(14px)에 걸리지 않도록 — 숫자 크기 복원 */
 .stat-band .stat b span { font-size: inherit; color: inherit; }
+
+@media (max-width: 640px) {
+  .v7 .container, body.v7 .container { width: calc(100% - 32px); }
+  .v7 .hero .hero-grid { gap: 28px; }
+  .v7 .hero .arch { max-height: 380px; }
+  .v7 .stat-band { grid-template-columns: 1fr 1fr; }
+  .v7 .contact-grid, .v7 .contact-info { min-width: 0; }
+  .v7 .site-footer { border-radius: 24px 24px 0 0; }
+  .v7 .site-footer .f-links { display: flex; flex-wrap: wrap; gap: 10px 16px; }
+}
+
+@media (max-width: 420px) {
+  .v7 .stat-band { grid-template-columns: 1fr; }
+}

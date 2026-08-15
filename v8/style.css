@@ -35,3 +35,19 @@
 /* 프로세스 원: 문자 기호 → 의미 있는 라인 아이콘 */
 .process-grid b::before { content: none; }
 .process-grid b svg { display: block; color: var(--v8-gold); }
+
+@media (max-width: 640px) {
+  .v8 .container, .v8-hero .hero-inner, .v8 .service-list { width: calc(100% - 32px); }
+  .v8-intro, .v8-services, .v8-process, .v8-people, .v8-contact { padding-top: 80px; padding-bottom: 80px; }
+  .v8-hero .hero-proof > div { min-height: 92px; padding: 14px; }
+  .v8-hero .hero-proof strong { font-size: 20px; }
+  .v8 .service-row { min-width: 0; padding-left: 18px; padding-right: 18px; }
+  .v8 .process-grid > div { min-width: 0; padding: 18px 8px; }
+  .v8 .people-copy { padding: 64px 16px; }
+  .v8 .contact-grid, .v8 .contact-data { min-width: 0; }
+}
+
+@media (max-width: 420px) {
+  .v8 .process-grid { grid-template-columns: 1fr; }
+  .v8 .hero-proof { grid-template-columns: 1fr 1fr; }
+}

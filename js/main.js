@@ -32,7 +32,7 @@
     if (!document.querySelector('link[data-subpage-themes]')) {
       var themeCss = document.createElement("link");
       themeCss.rel = "stylesheet";
-      themeCss.href = ROOT + "css/subpage-themes.css?v=20260815-v9-font";
+      themeCss.href = ROOT + "css/subpage-themes.css?v=20260815-mobile";
       themeCss.setAttribute("data-subpage-themes", "");
       document.head.appendChild(themeCss);
     }
