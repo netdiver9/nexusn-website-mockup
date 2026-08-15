@@ -286,6 +286,32 @@ body.site-theme-v9 .site-footer .f-license,
 body.v9 .site-footer .f-copy,
 body.site-theme-v9 .site-footer .f-copy { color:#c9aaad }
 
+/* 시안 4 CI·푸터 — 웜 코퍼레이트 팔레트 */
+body.theme-warm .site-header .logo img,
+body.site-theme-v4 .site-header .logo img {
+  filter:brightness(0) saturate(100%) invert(19%) sepia(19%) saturate(1150%) hue-rotate(330deg) brightness(88%) contrast(88%);
+}
+body.theme-warm .site-header,
+body.site-theme-v4 .site-header { background:rgba(251,245,238,.96);border-bottom-color:#e6d1c4 }
+body.theme-warm .site-footer,
+body.site-theme-v4 .site-footer {
+  background:#49312a;
+  color:#ead8cf;
+  border-top:8px solid #ff805b;
+}
+body.theme-warm .site-footer .footer-top,
+body.site-theme-v4 .site-footer .footer-top { border-bottom-color:rgba(255,245,238,.2) }
+body.theme-warm .site-footer .f-links a,
+body.site-theme-v4 .site-footer .f-links a { color:#fff3e9 }
+body.theme-warm .site-footer .f-links a.em,
+body.site-theme-v4 .site-footer .f-links a.em { color:#ff9a7b }
+body.theme-warm .site-footer .f-license,
+body.site-theme-v4 .site-footer .f-license,
+body.theme-warm .site-footer .f-copy,
+body.site-theme-v4 .site-footer .f-copy { color:#c7aaa0 }
+body.theme-warm .site-footer .f-logo img,
+body.site-theme-v4 .site-footer .f-logo img { filter:brightness(0) invert(1) sepia(.18);opacity:.96 }
+
 /* 모바일 햄버거 */
 .nav-toggle {
   display: none;
