@@ -312,6 +312,26 @@ body.site-theme-v4 .site-footer .f-copy { color:#c7aaa0 }
 body.theme-warm .site-footer .f-logo img,
 body.site-theme-v4 .site-footer .f-logo img { filter:brightness(0) invert(1) sepia(.18);opacity:.96 }
 
+/* 시안 5 푸터 — 블랙·라임 에디토리얼 팔레트 */
+body.theme-dark .site-footer,
+body.site-theme-v5 .site-footer {
+  background:#121713;
+  color:#b7bdb8;
+  border-top:8px solid #caff3d;
+}
+body.theme-dark .site-footer .footer-top,
+body.site-theme-v5 .site-footer .footer-top { border-bottom-color:rgba(202,255,61,.2) }
+body.theme-dark .site-footer .f-links a,
+body.site-theme-v5 .site-footer .f-links a { color:#f2f4ef }
+body.theme-dark .site-footer .f-links a.em,
+body.site-theme-v5 .site-footer .f-links a.em { color:#caff3d }
+body.theme-dark .site-footer .f-license,
+body.site-theme-v5 .site-footer .f-license,
+body.theme-dark .site-footer .f-copy,
+body.site-theme-v5 .site-footer .f-copy { color:#788078 }
+body.theme-dark .site-footer .f-logo img,
+body.site-theme-v5 .site-footer .f-logo img { filter:brightness(0) invert(1);opacity:.96 }
+
 /* 모바일 햄버거 */
 .nav-toggle {
   display: none;
