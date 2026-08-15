@@ -125,6 +125,9 @@
 .theme-warm .strength-icon{margin-top:58px}.theme-warm .process-track span{margin:28px 0 20px}.theme-warm .process-track>div:nth-child(even) span{transform:rotate(5deg);border-radius:38% 62% 42% 58%}
 .theme-dark .strength-icon,.theme-dark .process-track span{display:grid;place-items:center;width:58px;height:58px;border:2px solid #151915;border-radius:0;background:#caff3d;color:#151915;font-size:25px;box-shadow:6px 6px 0 #151915}
 .theme-dark .strength-icon{margin-top:58px}.theme-dark .process-track span{margin:28px 0 20px}.theme-dark .process-track>div:nth-child(even) span{background:#151915;color:#caff3d;box-shadow:6px 6px 0 rgba(21,25,21,.35)}
+.theme-dark .strength-icon,.theme-dark .process-track span{width:72px;height:72px}
+.theme-dark .strength-icon svg,.theme-dark .process-track span svg{width:42px;height:42px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s}
+.theme-dark .strength:hover .strength-icon svg,.theme-dark .process-track>div:hover span svg{transform:scale(1.1) rotate(-3deg)}
 .theme-minimal .strength-icon,.theme-minimal .process-track span{display:grid;place-items:center;width:58px;height:58px;border:1px solid #2785e6;border-radius:10px;background:#e6f0ff;color:#155eae;font:500 27px/1 ui-monospace,SFMono-Regular,Menlo,monospace;clip-path:polygon(16% 0,84% 0,100% 16%,100% 84%,84% 100%,16% 100%,0 84%,0 16%)}
 .theme-minimal .strength-icon{margin-top:58px}.theme-minimal .process-track span{margin:28px 0 20px}
 
