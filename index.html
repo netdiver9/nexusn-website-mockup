@@ -20,12 +20,11 @@
       padding: 40px 6%;
       word-break: keep-all;
     }
-    .wrap { max-width: 860px; width: 100%; text-align: center; }
-    .logo { font-size: 30px; font-weight: 800; color: #0f2440; letter-spacing: .02em; }
-    .logo b { color: #0b57d0; }
+    .wrap { max-width: 1260px; width: 100%; text-align: center; }
+    .logo img { width: 210px; height: 70px; object-fit: contain; }
     h1 { margin: 14px 0 8px; font-size: clamp(22px, 4vw, 32px); font-weight: 800; color: #0f2440; }
     .desc { color: #5b6675; margin-bottom: 44px; font-size: 16px; }
-    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
     @media (max-width: 640px) { .cards { grid-template-columns: 1fr; } }
     .card {
       display: block;
@@ -43,14 +42,20 @@
     .card h2 { font-size: 22px; font-weight: 800; color: #0f2440; margin: 8px 0 8px; }
     .card p { font-size: 14.5px; color: #5b6675; line-height: 1.7; margin-bottom: 18px; }
     .card span { font-size: 14px; font-weight: 700; color: #0b57d0; }
+    .card:nth-child(3) { border-top: 5px solid #63e6be; }
+    .card:nth-child(4) { border-top: 5px solid #ff805b; }
+    .card:nth-child(5) { border-top: 5px solid #caff3d; background: #171b18; color: #fff; }
+    .card:nth-child(5) h2 { color: #fff; }
+    .card:nth-child(5) p { color: #aeb6af; }
+    .card:nth-child(6) { border-top: 5px solid #2785e6; }
     .foot { margin-top: 46px; font-size: 13px; color: #8a95a5; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <p class="logo">NEXUS<b>N</b></p>
+    <p class="logo"><img src="assets/brand/nexusn-logo.svg" alt="NEXUSN"></p>
     <h1>넥서스엔 홈페이지 디자인 시안</h1>
-    <p class="desc">두 가지 시안 중 마음에 드는 방향을 선택해 주세요. 메뉴와 내용은 동일하며 디자인만 다릅니다.</p>
+    <p class="desc">여섯 가지 시안 중 마음에 드는 방향을 선택해 주세요. 메뉴와 내용은 동일하며 디자인 콘셉트만 다릅니다.</p>
     <div class="cards">
       <a class="card" href="v1/">
         <p class="num">DESIGN 01</p>
@@ -63,6 +68,18 @@
         <h2>시안 2 — 포토 코퍼레이트</h2>
         <p>실제 사무실·인물 사진으로 화면을 구성한<br>밝고 신뢰감 있는 기업 사이트 스타일.</p>
         <span>시안 2 보기 →</span>
+      </a>
+      <a class="card" href="v3/">
+        <p class="num">DESIGN 03</p><h2>시안 3 — Modern Human HR</h2><p>네이비와 민트, 사람 중심 메시지를 결합한<br>현대적이고 균형 잡힌 대표 HR 스타일.</p><span>시안 3 보기 →</span>
+      </a>
+      <a class="card" href="v4/">
+        <p class="num">DESIGN 04</p><h2>시안 4 — Warm Corporate</h2><p>코랄 포인트와 부드러운 곡선으로 구성한<br>따뜻하고 친근한 인재 중심 스타일.</p><span>시안 4 보기 →</span>
+      </a>
+      <a class="card" href="v5/">
+        <p class="num">DESIGN 05</p><h2>시안 5 — Bold Editorial</h2><p>블랙과 라임, 강한 타이포그래피를 활용한<br>젊고 선명한 에디토리얼 스타일.</p><span>시안 5 보기 →</span>
+      </a>
+      <a class="card" href="v6/">
+        <p class="num">DESIGN 06</p><h2>시안 6 — Minimal Tech HR</h2><p>화이트와 블루, 정돈된 정보 구조를 사용한<br>깨끗하고 미래지향적인 HR 스타일.</p><span>시안 6 보기 →</span>
       </a>
     </div>
     <p class="foot">주식회사 넥서스엔 · 홈페이지 리뉴얼 시안 검토용 페이지</p>

@@ -6,6 +6,13 @@
    ========================================================================== */
 
 /* ---------- 히어로: 실제 사진 슬라이드 ---------- */
+:root { --v2-gold: #d4a74f; --v2-ink: #071b33; }
+.site-header { background: rgba(7,27,51,.96); border-bottom-color: rgba(255,255,255,.12); }
+.site-header .gnb > li > a { color: #fff; }
+.site-header .gnb > li > a small { color: rgba(255,255,255,.48); }
+.site-header .logo img { filter: brightness(0) invert(1); }
+.site-header .nav-toggle span { background: #fff; }
+.hero { margin: 0; height: 100vh; min-height: 720px; }
 .hero .slide-1 {
   background-image: linear-gradient(100deg, rgba(8, 20, 40, 0.78) 20%, rgba(8, 20, 40, 0.3) 70%),
     url("../assets/img/hero-office.jpg");
@@ -19,6 +26,11 @@
     url("../assets/img/hero-team.jpg");
 }
 .hero::after { display: none; } /* 도트 패턴 제거 — 사진 그대로 노출 */
+.hero .hero-eyebrow { color: var(--v2-gold); letter-spacing: .2em; text-transform: uppercase; }
+.hero h1 { max-width: 900px; font-family: Georgia,"Times New Roman",serif; font-size: clamp(44px,6vw,78px); font-weight: 500; line-height: 1.2; }
+.hero h1 strong { color: var(--v2-gold); }
+.hero .btn { border-color: var(--v2-gold); color: #fff; border-radius: 0; }
+.hero .hero-dots button.current { background: var(--v2-gold); }
 
 /* ---------- 회사소개: 텍스트 + 사진 분할 섹션 ---------- */
 .about-split {
@@ -43,6 +55,7 @@
   line-height: 1.4;
   margin-bottom: 18px;
 }
+.about-split .a-copy h2, .sec-head h2 { font-family: Georgia,"Times New Roman",serif; font-weight: 500; }
 .about-split .a-copy p {
   color: var(--text-sub);
   font-size: 16.5px;
@@ -73,6 +86,10 @@
 .biz-card.biz-2::before { background-image: url("../assets/img/biz-dispatch.jpg"); }
 .biz-card.biz-3::before { background-image: url("../assets/img/biz-consult.jpg"); }
 .biz-card { min-height: 380px; }
+.biz-card { border-radius: 0; }
+.biz-card:hover { transform: translateY(-14px); box-shadow: 0 25px 65px rgba(7,27,51,.25); }
+.why-card { border-radius: 0; border-top: 3px solid var(--v2-gold); }
+.process-step .p-icon { border-color: var(--v2-gold); color: #9a712a; }
 
 /* ---------- 인재상: 사진 배경 풀폭 배너 (패럴랙스) ---------- */
 .talent-photo {
