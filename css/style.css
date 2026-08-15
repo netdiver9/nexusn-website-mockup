@@ -187,7 +187,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   body.site-theme-v9 .site-header .logo { gap: 16px; }
   body.v9 .site-header .logo img,
   body.site-theme-v9 .site-header .logo img {
-    width: 138px;
+    width: 180px;
     filter: brightness(0) saturate(100%) invert(20%) sepia(27%) saturate(2300%) hue-rotate(294deg) brightness(86%) contrast(91%);
   }
   body.v9 .site-header .logo::after,
@@ -262,6 +262,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .v9-mega-column a.depth3::before { content: "—"; position: absolute; left: 0; color: #c98e8d; }
   .v9-mega-note { align-self: end; margin: 0; color: #756a60; font: 700 10px/1.7 var(--font); letter-spacing: .12em; }
   .v9-mega-note b { color: #6e2637; }
+
 }
 
 @media (max-width: 640px) {
@@ -270,6 +271,20 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   body.v9 .site-header .logo img,
   body.site-theme-v9 .site-header .logo img { width: 124px; }
 }
+
+/* 시안 9 푸터 — 메인과 상세페이지 모두 버건디 저널 팔레트 */
+body.v9 .site-footer,
+body.site-theme-v9 .site-footer { background:#541e2c;color:#e1cfd0;border-top:8px solid #c98e8d }
+body.v9 .site-footer .footer-top,
+body.site-theme-v9 .site-footer .footer-top { border-bottom-color:rgba(250,247,240,.22) }
+body.v9 .site-footer .f-links a,
+body.site-theme-v9 .site-footer .f-links a { color:#f1eadc }
+body.v9 .site-footer .f-links a.em,
+body.site-theme-v9 .site-footer .f-links a.em { color:#f0b9b7 }
+body.v9 .site-footer .f-license,
+body.site-theme-v9 .site-footer .f-license,
+body.v9 .site-footer .f-copy,
+body.site-theme-v9 .site-footer .f-copy { color:#c9aaad }
 
 /* 모바일 햄버거 */
 .nav-toggle {
