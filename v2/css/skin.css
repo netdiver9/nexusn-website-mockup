@@ -352,7 +352,7 @@
 .site-theme-v2 .action-box p{color:rgba(255,255,255,.78)}
 .site-theme-v2 .action-box .notice-note{background:rgba(255,255,255,.12);color:#e8ded0}
 .site-theme-v2 .action-box .notice-note b{color:#d4a74f}
-.site-theme-v2 .talent-banner{background:linear-gradient(rgba(7,27,51,.78),rgba(7,27,51,.78)),url("../../assets/img/talent-banner.jpg") center/cover fixed}
+.site-theme-v2 .talent-banner{background:linear-gradient(rgba(7,27,51,.78),rgba(7,27,51,.78)),url("../../assets/img/v2-about.jpg") center/cover fixed}
 .site-theme-v2 .mv-card{background:linear-gradient(rgba(7,27,51,.85),rgba(13,44,77,.85)),url("../../assets/img/biz-consult.jpg") center/cover}
 .site-theme-v2 .mv-card.alt{background:linear-gradient(rgba(7,27,51,.85),rgba(13,44,77,.85)),url("../../assets/img/biz-dispatch.jpg") center/cover}
 @media(max-width:1024px){.site-theme-v2 .talent-banner{background-attachment:scroll}}
@@ -408,7 +408,7 @@
 .site-theme-v2 .page-hero::before{content:"";position:absolute;inset:0 0 auto 0;height:150px;background:linear-gradient(to bottom,rgba(7,27,51,.55),transparent);pointer-events:none}
 .site-theme-v2.detail-about .page-hero{background:linear-gradient(rgba(7,27,51,.6),rgba(7,27,51,.6)),url("../../assets/img/v2-about.jpg") center/cover}
 .site-theme-v2.detail-services .page-hero{background:linear-gradient(rgba(7,27,51,.6),rgba(7,27,51,.6)),url("../../assets/img/biz-warehouse.jpg") center/cover}
-.site-theme-v2.detail-recruit .page-hero{background:linear-gradient(rgba(7,27,51,.6),rgba(7,27,51,.6)),url("../../assets/img/v2-hero-3.jpg") center/cover}
+.site-theme-v2.detail-recruit .page-hero{background:linear-gradient(rgba(7,27,51,.6),rgba(7,27,51,.6)),url("../../assets/img/hero-team.jpg") center/cover}
 .site-theme-v2.detail-board .page-hero{background:linear-gradient(rgba(7,27,51,.6),rgba(7,27,51,.6)),url("../../assets/img/hero-meeting.jpg") center/cover}
 .site-theme-v2 .sub-section:nth-of-type(even){background:linear-gradient(rgba(7,27,51,.72),rgba(7,27,51,.72)),url("../../assets/img/v2-about.jpg") center/cover fixed}
-.site-theme-v2 .sub-section:nth-of-type(4n){background:linear-gradient(rgba(7,27,51,.72),rgba(7,27,51,.72)),url("../../assets/img/v2-hero-3.jpg") center/cover fixed}
+.site-theme-v2 .sub-section:nth-of-type(4n){background:linear-gradient(rgba(7,27,51,.72),rgba(7,27,51,.72)),url("../../assets/img/hero-team.jpg") center/cover fixed}

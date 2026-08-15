@@ -130,13 +130,23 @@
       );
     }).join("");
 
+    /* 전체 메뉴가 한 번에 내려오는 메가 메뉴 패널 */
+    var mega = NAV.map(function (group) {
+      var links = visibleItems(group).map(function (it) {
+        return '<a class="' + (it.depth3 ? "depth3" : "") + '" href="' + ROOT + it.href + '">' + it.label + "</a>";
+      }).join("");
+      return '<div class="mega-col"><p>' + group.title + "<small>" + group.en + "</small></p>" + links + "</div>";
+    }).join("");
+
     el.innerHTML =
       '<header class="site-header">' +
       '<div class="container header-inner">' +
       '<a class="logo" href="' + HOME + '"><img src="' + ROOT + 'assets/brand/nexusn-logo.svg" alt="NEXUSN"></a>' +
       '<nav aria-label="주 메뉴"><ul class="gnb">' + gnb + "</ul></nav>" +
       '<button class="nav-toggle" type="button" aria-label="메뉴 열기"><span></span><span></span><span></span></button>' +
-      "</div></header>" +
+      "</div>" +
+      '<div class="mega-panel"><div class="mega-grid">' + mega + "</div></div>" +
+      "</header>" +
       '<div class="mobile-nav">' + mobile + "</div>";
 
     /* 스크롤 시 헤더 그림자 */

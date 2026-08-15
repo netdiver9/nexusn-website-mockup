@@ -218,3 +218,96 @@
 .theme-warm .site-header .gnb > li > a small { color: #a08b80; }
 .theme-warm .site-header .logo img { filter: none; }
 .theme-warm .site-header .nav-toggle span { background: #49312a; }
+
+/* ==========================================================================
+   메가 메뉴 — 개별 드롭다운 대신 전체 메뉴가 한 번에 내려오고,
+   열리는 순간 헤더와 패널이 지정 색(딥 블루)으로 채워짐
+   ========================================================================== */
+.gnb .dropdown { display: none !important; }
+.mega-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #14264a;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 60px rgba(8, 20, 40, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px);
+  transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+}
+.site-header:hover .mega-panel,
+.site-header:focus-within .mega-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+/* 메뉴가 열리면 헤더도 같은 색으로 */
+.site-header:hover, .site-header:focus-within { background: #14264a; }
+.site-header:hover .gnb > li > a, .site-header:focus-within .gnb > li > a { color: #fff; }
+.site-header:hover .logo img, .site-header:focus-within .logo img { filter: brightness(0) invert(1); }
+.mega-grid {
+  width: min(1420px, 92%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 34px;
+  padding: 42px 0 52px;
+}
+.mega-col > p {
+  color: #fff;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+.mega-col > p small {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(157, 184, 255, 0.7);
+  margin-top: 3px;
+}
+.mega-col a {
+  display: block;
+  padding: 7px 0;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.72);
+  transition: color 0.2s, transform 0.2s;
+}
+.mega-col a:hover { color: #9db8ff; transform: translateX(5px); }
+.mega-col a.depth3 { padding-left: 14px; font-size: 13.5px; color: rgba(255, 255, 255, 0.48); }
+@media (max-width: 1024px) { .mega-panel { display: none; } }
+
+/* ==========================================================================
+   밝기 보정 — 히어로·그래픽 블록을 한 톤 밝은 블루로
+   ========================================================================== */
+.home-new .new-hero { background: #1c3a63; }
+.home-new .new-hero .slide-1 {
+  background-image:
+    linear-gradient(90deg, #16305a 0%, rgba(22, 48, 90, 0.08) 34%),
+    radial-gradient(900px 620px at 78% 30%, #5b9bd9 0%, #2f6398 45%, #1a3557 100%);
+}
+.home-new .new-hero .slide-2 {
+  background-image:
+    linear-gradient(90deg, #16305a 0%, rgba(22, 48, 90, 0.08) 34%),
+    radial-gradient(820px 640px at 70% 70%, #4a86c0 0%, #275384 50%, #16305a 100%);
+}
+.home-new .new-hero .slide-3 {
+  background-image:
+    linear-gradient(90deg, #16305a 0%, rgba(22, 48, 90, 0.08) 34%),
+    radial-gradient(880px 600px at 85% 55%, #6aa5db 0%, #35699e 50%, #1c3a63 100%);
+}
+.home-new .new-hero::after {
+  background: linear-gradient(90deg, rgba(20, 38, 74, 0.8) 0 28%, transparent 56%),
+    linear-gradient(0deg, rgba(10, 26, 48, 0.35), transparent 42%);
+}
+.home-new .new-hero::before { background: linear-gradient(to bottom, rgba(12, 26, 52, 0.4), transparent); }
+.talent-photo-block {
+  background: radial-gradient(700px 520px at 65% 40%, #4a86c0, #24476e 55%, #16305a 100%) !important;
+}
