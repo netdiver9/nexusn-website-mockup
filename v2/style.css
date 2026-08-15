@@ -129,3 +129,35 @@
   .about-split .a-photo::before { display: none; }
   .talent-photo { background-attachment: scroll; }
 }
+
+/* ---------- 핵심 실적 스트립 (카운트업) ---------- */
+.stat-strip { background: var(--v2-ink, #071b33); color: #fff; }
+.stat-strip-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 38px 0;
+}
+.stat-strip .st { text-align: center; flex: 1; min-width: 150px; }
+.stat-strip .st b {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  font-size: clamp(30px, 3.6vw, 44px);
+  color: var(--v2-gold, #d4a74f);
+  line-height: 1.2;
+}
+.stat-strip .st > span { font-size: 14px; color: rgba(255, 255, 255, 0.72); }
+
+/* ---------- 히어로 켄번즈(느린 줌) 효과 ---------- */
+.hero .slide { transform: scale(1.06); }
+.hero .slide.current { animation: v2-kenburns 6.5s ease-out forwards; }
+@keyframes v2-kenburns {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero .slide, .hero .slide.current { transform: none; animation: none; }
+}

@@ -285,9 +285,43 @@
     els.forEach(function (e) { io.observe(e); });
   }
 
+  /* ------------------------------------------------------------------
+     숫자 카운트업 — <span data-count="10">10</span> 형태의 요소가
+     화면에 들어오면 0부터 목표값까지 차오릅니다.
+     ------------------------------------------------------------------ */
+  function initCounters() {
+    var els = document.querySelectorAll("[data-count]");
+    if (!els.length || !("IntersectionObserver" in window)) return;
+    function animate(el) {
+      var target = parseInt(el.getAttribute("data-count"), 10);
+      if (isNaN(target)) return;
+      var dur = 1300;
+      var start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / dur, 1);
+        /* easeOutCubic */
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased);
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          animate(en.target);
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    els.forEach(function (e) { io.observe(e); });
+  }
+
   renderHeader();
   renderFooter();
   renderPageTabs();
   initSlider();
   initReveal();
+  initCounters();
 })();

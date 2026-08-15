@@ -747,3 +747,14 @@ body.nav-open .mobile-nav { display: block; }
   .hero { padding-top: calc(var(--header-h) + 36px); }
   .hero .arch-badge { padding: 12px 16px; }
 }
+
+/* ---------- 아치 사진 켄번즈(느린 줌) 효과 ---------- */
+.hero .slide { transform: scale(1.06); }
+.hero .slide.current { animation: v7-kenburns 6.5s ease-out forwards; }
+@keyframes v7-kenburns {
+  from { transform: scale(1.1); }
+  to { transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero .slide, .hero .slide.current { transform: none; animation: none; }
+}
