@@ -153,13 +153,28 @@
       );
     }).join("");
 
+    /* 시안 9: 매거진 목차처럼 모든 depth를 한 화면에 보여주는 전체폭 메뉴 */
+    var v9Mega = "";
+    if (SITE_THEME === "v9") {
+      var megaColumns = NAV.map(function (group, groupIndex) {
+        var links = visibleItems(group).map(function (it) {
+          return '<a class="' + (it.depth3 ? "depth3 " : "") + (isCurrent(it.href) ? "active" : "") +
+            '" href="' + ROOT + it.href + THEME_QS + '">' + it.label + "</a>";
+        }).join("");
+        return '<section class="v9-mega-column"><p>0' + (groupIndex + 1) + ' · ' + group.en +
+          '</p><h2>' + group.title + '</h2><div>' + links + "</div></section>";
+      }).join("");
+      v9Mega = '<div class="v9-mega-menu"><div class="container v9-mega-grid">' + megaColumns +
+        '<p class="v9-mega-note">NEXUSN JOURNAL<br><b>PEOPLE &amp; BUSINESS</b></p></div></div>';
+    }
+
     el.innerHTML =
       '<header class="site-header">' +
       '<div class="container header-inner">' +
       '<a class="logo" href="' + HOME + '"><img src="' + ROOT + 'assets/brand/nexusn-logo.svg" alt="NEXUSN"></a>' +
       '<nav aria-label="주 메뉴"><ul class="gnb">' + gnb + "</ul></nav>" +
       '<button class="nav-toggle" type="button" aria-label="메뉴 열기"><span></span><span></span><span></span></button>' +
-      "</div></header>" +
+      "</div>" + v9Mega + "</header>" +
       '<div class="mobile-nav">' + mobile + "</div>";
 
     /* 스크롤 시 헤더 그림자 */
