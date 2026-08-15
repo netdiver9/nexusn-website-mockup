@@ -1,0 +1,114 @@
+/* ==========================================================================
+   NexusN — 시안 2 : 포토 코퍼레이트
+   css/style.css(시안 A)를 베이스로 불러온 뒤, 사진 중심 구성을 위한
+   추가/오버라이드 스타일만 정의합니다.
+   사진 교체: assets/img/ 의 파일을 같은 이름으로 바꾸면 됩니다.
+   ========================================================================== */
+
+/* ---------- 히어로: 실제 사진 슬라이드 ---------- */
+.hero .slide-1 {
+  background-image: linear-gradient(100deg, rgba(8, 20, 40, 0.78) 20%, rgba(8, 20, 40, 0.3) 70%),
+    url("../assets/img/hero-office.jpg");
+}
+.hero .slide-2 {
+  background-image: linear-gradient(100deg, rgba(8, 20, 40, 0.78) 20%, rgba(8, 20, 40, 0.3) 70%),
+    url("../assets/img/hero-meeting.jpg");
+}
+.hero .slide-3 {
+  background-image: linear-gradient(100deg, rgba(8, 20, 40, 0.78) 20%, rgba(8, 20, 40, 0.3) 70%),
+    url("../assets/img/hero-team.jpg");
+}
+.hero::after { display: none; } /* 도트 패턴 제거 — 사진 그대로 노출 */
+
+/* ---------- 회사소개: 텍스트 + 사진 분할 섹션 ---------- */
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: clamp(30px, 5vw, 70px);
+  align-items: center;
+}
+.about-split .a-copy .eyebrow {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 14px;
+}
+.about-split .a-copy h2 {
+  font-size: clamp(24px, 3.4vw, 36px);
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.4;
+  margin-bottom: 18px;
+}
+.about-split .a-copy p {
+  color: var(--text-sub);
+  font-size: 16.5px;
+  margin-bottom: 28px;
+}
+.about-split .a-photo {
+  position: relative;
+}
+.about-split .a-photo img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+/* 사진 뒤 블루 프레임 장식 */
+.about-split .a-photo::before {
+  content: "";
+  position: absolute;
+  top: 24px; right: -24px; bottom: -24px; left: 24px;
+  border: 2px solid var(--sky);
+  border-radius: var(--radius);
+  z-index: -1;
+}
+
+/* ---------- 사업영역: 사진 카드 ---------- */
+.biz-card.biz-1::before { background-image: url("../assets/img/biz-warehouse.jpg"); }
+.biz-card.biz-2::before { background-image: url("../assets/img/biz-dispatch.jpg"); }
+.biz-card.biz-3::before { background-image: url("../assets/img/biz-consult.jpg"); }
+.biz-card { min-height: 380px; }
+
+/* ---------- 인재상: 사진 배경 풀폭 배너 (패럴랙스) ---------- */
+.talent-photo {
+  position: relative;
+  padding: clamp(90px, 12vw, 150px) 0;
+  color: var(--white);
+  text-align: center;
+  background-image: linear-gradient(rgba(9, 24, 48, 0.72), rgba(9, 24, 48, 0.72)),
+    url("../assets/img/talent-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.talent-photo .eyebrow {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #a9c8ff;
+  margin-bottom: 16px;
+}
+.talent-photo h2 {
+  font-size: clamp(24px, 3.6vw, 38px);
+  font-weight: 800;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+/* iOS 등 fixed 미지원 환경 대응 */
+@supports (-webkit-touch-callout: none) {
+  .talent-photo { background-attachment: scroll; }
+}
+
+@media (max-width: 1024px) {
+  .about-split { grid-template-columns: 1fr; }
+  .about-split .a-photo::before { display: none; }
+  .talent-photo { background-attachment: scroll; }
+}
