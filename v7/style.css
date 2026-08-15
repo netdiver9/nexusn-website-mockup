@@ -746,6 +746,15 @@ body.nav-open .mobile-nav { display: block; }
   .p-step { flex: 0 0 100%; }
   .hero { padding-top: calc(var(--header-h) + 36px); }
   .hero .arch-badge { padding: 12px 16px; }
+  html, body { max-width: 100%; overflow-x: hidden; }
+  body { word-break: normal; overflow-wrap: anywhere; }
+  .hero { min-height: 720px; }
+  .hero h1 { font-size: clamp(40px, 12vw, 52px); }
+  .mobile-nav { padding-bottom: max(24px, env(safe-area-inset-bottom)); }
+  .mobile-nav a, .mobile-nav button, .btn { min-height: 44px; }
+  .svc-row { padding: 24px 0; }
+  .talent-copy, .contact-info { overflow-wrap: anywhere; }
+  .map-frame { min-height: 340px; }
 }
 
 /* ---------- 아치 사진 켄번즈(느린 줌) 효과 ---------- */

@@ -1068,6 +1068,12 @@ body[data-root="./"] .hero .btn-light:hover { background: #fff; border-color: #f
   .process-block { padding: 30px 18px; }
   .process-block .process-step { flex: 0 0 100%; }
   .talent-visual { min-height: 500px; }
+  html, body { max-width: 100%; overflow-x: hidden; }
+  body { word-break: normal; overflow-wrap: anywhere; }
+  .mobile-nav { padding-bottom: max(24px, env(safe-area-inset-bottom)); }
+  .mobile-nav a, .mobile-nav button, .map-links a, .btn { min-height: 44px; }
+  .contact-item .c-value, .site-footer address { overflow-wrap: anywhere; }
+  .map-box, .map-box iframe { min-height: 300px; }
   .site-footer .footer-top { flex-direction: column; }
   .info-table th { width: 110px; }
   .sub-content { padding: 60px 0 80px; }

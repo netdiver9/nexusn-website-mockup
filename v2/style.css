@@ -130,6 +130,16 @@
   .talent-photo { background-attachment: scroll; }
 }
 
+@media (max-width: 640px) {
+  .hero { height: auto; min-height: 650px; }
+  .hero h1 { font-size: clamp(38px, 11vw, 48px); }
+  .hero .hero-inner { padding-bottom: 40px; }
+  .about-split .a-copy h2 { font-size: 34px; }
+  .stat-strip-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .stat-strip .st { min-width: 0; padding: 18px 8px; }
+  .talent-photo h2 br { display: none; }
+}
+
 /* ---------- 핵심 실적 스트립 (카운트업) ---------- */
 .stat-strip { background: var(--v2-ink, #071b33); color: #fff; }
 .stat-strip-inner {
