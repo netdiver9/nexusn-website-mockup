@@ -84,7 +84,7 @@
 /* ---------- 사업영역: 사진 카드 ---------- */
 .biz-card.biz-1::before { background-image: url("../assets/img/biz-warehouse.jpg"); }
 .biz-card.biz-2::before { background-image: url("../assets/img/biz-dispatch.jpg"); }
-.biz-card.biz-3::before { background-image: url("../assets/img/biz-consult.jpg"); }
+.biz-card.biz-3::before { background-image: url("../assets/img/v2-consult.jpg"); }
 .biz-card { min-height: 380px; }
 .biz-card { border-radius: 0; }
 .biz-card:hover { transform: translateY(-14px); box-shadow: 0 25px 65px rgba(7,27,51,.25); }
@@ -241,7 +241,7 @@
 }
 .hero .slide-2 {
   background-image: linear-gradient(100deg, rgba(8, 20, 40, 0.52) 12%, rgba(8, 20, 40, 0.08) 62%),
-    url("../assets/img/v2-wide.jpg");
+    url("../assets/img/v2-hero-2.jpg");
 }
 .hero .slide-3 {
   background-image: linear-gradient(100deg, rgba(8, 20, 40, 0.52) 12%, rgba(8, 20, 40, 0.08) 62%),
