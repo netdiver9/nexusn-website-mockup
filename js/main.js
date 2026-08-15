@@ -362,6 +362,26 @@
     });
   }
 
+  /* 상세페이지 시안 비교기: 현재 페이지를 유지한 채 디자인만 즉시 전환 */
+  function renderThemeSwitcher() {
+    if (!detailMatch) return;
+    var current = /^v[1-9]$/.test(SITE_THEME) ? SITE_THEME.slice(1) : "3";
+    var links = "";
+    for (var n = 1; n <= 9; n += 1) {
+      var compareUrl = new URL(location.href);
+      compareUrl.searchParams.set("site", "v" + n);
+      compareUrl.searchParams.delete("refresh");
+      links += '<a href="' + compareUrl.pathname + compareUrl.search + '"' +
+        (String(n) === current ? ' class="active" aria-current="page"' : "") +
+        '>시안 ' + n + "</a>";
+    }
+    var compare = document.createElement("details");
+    compare.className = "theme-compare";
+    compare.innerHTML = '<summary><span>DESIGN</span> 시안 ' + current + ' 비교</summary>' +
+      '<nav aria-label="상세페이지 시안 비교">' + links + "</nav>";
+    document.body.appendChild(compare);
+  }
+
   renderHeader();
   renderFooter();
   renderPageTabs();
@@ -369,4 +389,5 @@
   initReveal();
   initCounters();
   preserveSiteTheme();
+  renderThemeSwitcher();
 })();
