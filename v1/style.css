@@ -115,3 +115,34 @@
   stroke-linejoin: miter;
   stroke-width: 1.4;
 }
+
+/* ==========================================================================
+   인재상(04/PEOPLE) 왼쪽 그래픽 블록 — 빈 공간을 아웃라인 타이포 아트로 채움
+   ========================================================================== */
+.talent-photo-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+.talent-photo-block::before {
+  content: "PEOPLE\A FIRST";
+  white-space: pre;
+  text-align: center;
+  font-size: clamp(80px, 11vw, 170px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.3);
+  transform: rotate(-6deg);
+  animation: v1-float 7s ease-in-out infinite;
+}
+@keyframes v1-float {
+  0%, 100% { transform: rotate(-6deg) translateY(0); }
+  50% { transform: rotate(-6deg) translateY(-16px); }
+}
+/* 장식 링 */
+.talent-photo-block .deco-ring,
+.talent-photo-block::marker { display: none; }
