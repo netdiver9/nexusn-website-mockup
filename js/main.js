@@ -8,8 +8,22 @@
   "use strict";
 
   var ROOT = document.body.getAttribute("data-root") || "./";
+  var themeMatch = location.pathname.match(/\/(v[1-9])(?:\/|$)/);
+  var SITE_THEME = document.body.getAttribute("data-site-theme") ||
+    new URLSearchParams(location.search).get("site") ||
+    (themeMatch ? themeMatch[1] : "");
+  if (/^v[1-9]$/.test(SITE_THEME)) {
+    document.body.classList.add("site-theme-" + SITE_THEME);
+    if (!document.querySelector('link[data-subpage-themes]')) {
+      var themeCss = document.createElement("link");
+      themeCss.rel = "stylesheet";
+      themeCss.href = ROOT + "css/subpage-themes.css";
+      themeCss.setAttribute("data-subpage-themes", "");
+      document.head.appendChild(themeCss);
+    }
+  }
   /* 로고 클릭 시 이동할 홈 주소 (컨셉 시안별로 다른 메인을 가리킬 수 있음) */
-  var HOME = document.body.getAttribute("data-home") || ROOT + "index.html";
+  var HOME = document.body.getAttribute("data-home") || (SITE_THEME ? ROOT + SITE_THEME + "/index.html" : ROOT + "index.html");
 
   /* ------------------------------------------------------------------
      메뉴 구조 (depth 1 ~ 3)
@@ -318,10 +332,26 @@
     els.forEach(function (e) { io.observe(e); });
   }
 
+  function preserveSiteTheme() {
+    if (!SITE_THEME) return;
+    document.querySelectorAll("a[href]").forEach(function (link) {
+      var href = link.getAttribute("href");
+      if (!href || href.charAt(0) === "#" || /^(mailto:|tel:|https?:|javascript:)/i.test(href)) return;
+      if (!/\.html(?:$|[?#])|\/$/.test(href)) return;
+      try {
+        var url = new URL(href, location.href);
+        if (url.origin !== location.origin) return;
+        url.searchParams.set("site", SITE_THEME);
+        link.setAttribute("href", url.pathname + url.search + url.hash);
+      } catch (_) { /* 잘못된 링크는 원문 유지 */ }
+    });
+  }
+
   renderHeader();
   renderFooter();
   renderPageTabs();
   initSlider();
   initReveal();
   initCounters();
+  preserveSiteTheme();
 })();
