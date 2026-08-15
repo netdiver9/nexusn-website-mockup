@@ -12,3 +12,11 @@
 @media(max-width:640px){.v9{overflow-x:hidden}.story-lead{padding:100px 7% 55px}.story-lead h1{font-size:clamp(38px,11vw,44px)}.story-portrait{min-height:480px;margin:0 12px 12px}.story-portrait figcaption{padding:18px;gap:18px}.lead-bottom span,.scroll-note{display:none}.manifesto,.voices,.questions,.journey,.story-contact{padding:90px 0}.manifesto h2,.question-head h2,.journey h2{font-size:38px}.manifesto-grid{gap:45px}.manifesto-grid>div{grid-template-columns:45px 1fr}.voice-grid{margin-top:35px}.qa{padding:25px 0}.qa h3{font-size:19px}.journey-line{grid-template-columns:1fr}.journey-line li{min-height:170px}.people-letter{min-height:0}.letter-image{min-height:400px}.letter-copy{padding:75px 7%}.contact-story-grid{gap:55px}.contact-story-grid address{overflow-wrap:anywhere}.contact-story-grid address>a,.contact-story-grid address>div{font-size:16px;min-height:64px}}
 .voice-photo{background-image:url("../assets/img/design09-women-voices.png");background-position:center}
 .letter-image{background-image:url("../assets/img/design09-people-bright-mixed.png");background-position:center}
+
+/* 익숙하고 편안한 고딕 서체로 정리한 시안 9 타이포그래피 */
+.v9{font-family:var(--font)}
+.v9 h1,.v9 h2,.v9 h3,.v9 b,.v9 strong{font-family:var(--font)}
+.v9 .dropcap,.v9 .voice-grid article>span,.v9 .featured>div>span,.v9 .qa b,.v9 .journey-line b,.v9 .journey-line li::before{font-family:var(--font)}
+.story-lead h1{font-family:var(--font);font-size:clamp(46px,5.4vw,78px);font-weight:650;line-height:1.18;letter-spacing:-.045em;word-break:keep-all}
+.story-lead h1 em{display:inline-block;position:relative;color:var(--wine);font-style:normal;font-weight:900}
+.story-lead h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.03em;height:.12em;background:var(--rose);opacity:.55}

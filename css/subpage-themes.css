@@ -8,7 +8,7 @@
 .site-theme-v6{--t-primary:#153b73;--t-accent:#2785e6;--t-bg:#fff;--t-soft:#e6f0ff;--t-radius:10px}
 .site-theme-v7{--t-primary:#174f3e;--t-accent:#dd9c67;--t-bg:#f7f4ed;--t-soft:#e5eee5;--t-radius:30px}
 .site-theme-v8{--t-primary:#102b45;--t-accent:#c49a54;--t-bg:#faf9f6;--t-soft:#ede7da;--t-radius:2px}
-.site-theme-v9{--t-primary:#6e2637;--t-accent:#c98e8d;--t-bg:#faf7f0;--t-soft:#f1eadc;--t-radius:0px;--t-font:Georgia,"Times New Roman",serif}
+.site-theme-v9{--t-primary:#6e2637;--t-accent:#c98e8d;--t-bg:#faf7f0;--t-soft:#f1eadc;--t-radius:0px;--t-font:var(--font)}
 :where(body[class*="site-theme-"]) .site-header{background:color-mix(in srgb,var(--t-bg) 94%,transparent);border-bottom:1px solid color-mix(in srgb,var(--t-primary) 18%,transparent)}
 :where(body[class*="site-theme-"]) .logo img{filter:none}:where(body[class*="site-theme-"]) .gnb>li>a{color:var(--t-primary)}:where(body[class*="site-theme-"]) .gnb>li>a::after{background:var(--t-accent)}:where(body[class*="site-theme-"]) .gnb .dropdown{border-radius:var(--t-radius);border-color:color-mix(in srgb,var(--t-primary) 15%,transparent)}:where(body[class*="site-theme-"]) .gnb .dropdown a:hover,:where(body[class*="site-theme-"]) .gnb .dropdown a.active{background:var(--t-soft);color:var(--t-primary)}
 :where(body[class*="site-theme-"]) .page-hero{background:linear-gradient(125deg,var(--t-primary),color-mix(in srgb,var(--t-primary) 72%,#fff));padding:105px 0 82px}:where(body[class*="site-theme-"]) .page-hero::after{content:"";position:absolute;right:6%;top:24%;width:150px;height:150px;border:1px solid color-mix(in srgb,var(--t-accent) 65%,transparent);border-radius:var(--t-radius);transform:rotate(12deg)}:where(body[class*="site-theme-"]) .page-hero .p-eyebrow{color:color-mix(in srgb,var(--t-accent) 78%,#fff)}:where(body[class*="site-theme-"]) .page-hero h1{font-family:var(--t-font);font-size:clamp(36px,5vw,58px)}
@@ -16,7 +16,7 @@
 :where(body[class*="site-theme-"]) .info-card,:where(body[class*="site-theme-"]) .job-card,:where(body[class*="site-theme-"]) .download-box,:where(body[class*="site-theme-"]) .notice-note{border-radius:var(--t-radius);border-color:color-mix(in srgb,var(--t-primary) 15%,transparent);background:color-mix(in srgb,var(--t-bg) 88%,#fff)}:where(body[class*="site-theme-"]) .info-card:hover,:where(body[class*="site-theme-"]) .job-card:hover{border-color:var(--t-accent);box-shadow:0 18px 45px color-mix(in srgb,var(--t-primary) 15%,transparent)}:where(body[class*="site-theme-"]) .info-card .icon-wrap,:where(body[class*="site-theme-"]) .p-icon{background:var(--t-soft);color:var(--t-primary)}:where(body[class*="site-theme-"]) .info-card h3,:where(body[class*="site-theme-"]) .job-card h3{color:var(--t-primary)}
 :where(body[class*="site-theme-"]) .btn-solid{background:var(--t-primary);border-color:var(--t-primary)}:where(body[class*="site-theme-"]) .btn-outline{color:var(--t-primary);border-color:var(--t-primary)}:where(body[class*="site-theme-"]) .btn{border-radius:var(--t-radius)}:where(body[class*="site-theme-"]) .info-table,:where(body[class*="site-theme-"]) .compare-table{border-top-color:var(--t-primary)}:where(body[class*="site-theme-"]) .info-table th,:where(body[class*="site-theme-"]) .compare-table tbody th{background:var(--t-soft);color:var(--t-primary)}:where(body[class*="site-theme-"]) .compare-table thead th{background:var(--t-primary);border-color:var(--t-primary)}:where(body[class*="site-theme-"]) .timeline::before,:where(body[class*="site-theme-"]) .timeline .t-item::before{background:var(--t-accent)}
 :where(body[class*="site-theme-"]) .site-footer{background:var(--t-primary)}:where(body[class*="site-theme-"]) .site-footer .f-links a.em{color:color-mix(in srgb,var(--t-accent) 75%,#fff)}
-.site-theme-v5 .page-hero h1,.site-theme-v5 .sub-section>h2{text-transform:uppercase;letter-spacing:-.04em}.site-theme-v7 .page-hero::after{border-radius:50% 50% 12px 12px}.site-theme-v9 .page-hero h1{font-weight:400;font-style:italic}.site-theme-v9 .info-card{border-left:4px solid var(--t-primary)}
+.site-theme-v5 .page-hero h1,.site-theme-v5 .sub-section>h2{text-transform:uppercase;letter-spacing:-.04em}.site-theme-v7 .page-hero::after{border-radius:50% 50% 12px 12px}.site-theme-v9 .page-hero h1{font-weight:750;font-style:normal;letter-spacing:-.04em}.site-theme-v9 .info-card{border-left:4px solid var(--t-primary)}
 
 /* 시안별 레이아웃 언어 — 색상뿐 아니라 형태와 리듬까지 메인 시안과 연결 */
 .site-theme-v1 .page-hero{background-image:linear-gradient(90deg,#123e60 0 68%,#2e7fbd 68%)}
@@ -76,12 +76,14 @@
 
 .site-theme-v9 .site-header{background:#faf7f0;border-bottom:3px double #6e2637}
 .site-theme-v9 .page-hero{background:#6e2637;text-align:left;border-bottom:10px solid #f1eadc}
-.site-theme-v9 .page-hero::before{content:"NEXUSN JOURNAL";position:absolute;right:5%;bottom:20px;font:700 12px/1 Georgia,serif;letter-spacing:.22em;color:#f0c9aa}
+.site-theme-v9 .page-hero::before{content:"NEXUSN JOURNAL";position:absolute;right:5%;bottom:20px;font:800 12px/1 var(--font);letter-spacing:.22em;color:#f0c9aa}
 .site-theme-v9 .page-hero::after{border:0;border-radius:50%;background:#c98e8d;mix-blend-mode:screen;opacity:.38}
-.site-theme-v9 .page-tabs{border-bottom:3px double #6e2637}.site-theme-v9 .page-tabs a{font-family:Georgia,serif;font-style:italic}
+.site-theme-v9 .page-tabs{border-bottom:3px double #6e2637}.site-theme-v9 .page-tabs a{font-family:var(--font);font-style:normal;font-weight:650}
 .site-theme-v9 .lead-copy{border-top:1px solid var(--t-primary);border-bottom:1px solid var(--t-primary);padding:42px 0}
 .site-theme-v9 .info-card{background:transparent;border-top:1px solid var(--t-primary);border-bottom:1px solid var(--t-primary)}
-.site-theme-v9 .sub-section>h2{font-style:italic;font-weight:400}
+.site-theme-v9 .sub-section>h2{font-style:normal;font-weight:750;letter-spacing:-.035em}
+.site-theme-v9{font-family:var(--font)}
+.site-theme-v9 .lead-copy .en{font-family:var(--font)!important;font-style:normal!important;font-weight:750}
 
 /* 도급(업무위탁) — 시안마다 서비스 콘텐츠 구성도 다르게 표현 */
 .service-outsourcing[class*="site-theme-"] .lead-copy{position:relative;max-width:920px}

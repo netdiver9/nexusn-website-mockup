@@ -196,7 +196,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     padding-left: 16px;
     border-left: 1px solid #aa9683;
     color: #6e2637;
-    font: 700 9px/1.4 Georgia, "Times New Roman", serif;
+    font: 800 9px/1.4 var(--font);
     letter-spacing: .18em;
     white-space: nowrap;
   }
@@ -205,9 +205,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   body.v9 .gnb > li > a,
   body.site-theme-v9 .gnb > li > a {
     color: #2b2420;
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font);
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 650;
   }
   body.v9 .gnb > li > a small,
   body.site-theme-v9 .gnb > li > a small {
@@ -253,14 +253,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .v9-mega-column { min-height: 240px; padding: 0 30px; border-left: 1px solid #c9bcaa; }
   .v9-mega-column:first-child { padding-left: 0; border-left: 0; }
   .v9-mega-column > p { color: #7b263e; font-size: 9px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
-  .v9-mega-column h2 { margin: 12px 0 25px; color: #2b2420; font: 400 26px/1.1 Georgia, "Times New Roman", serif; }
+  .v9-mega-column h2 { margin: 12px 0 25px; color: #2b2420; font: 700 24px/1.2 var(--font); letter-spacing: -.03em; }
   .v9-mega-column > div { display: grid; gap: 4px; }
   .v9-mega-column a { padding: 7px 0; color: #665d54; font-size: 14px; transition: color .18s, padding-left .18s; }
   .v9-mega-column a:hover,
   .v9-mega-column a.active { color: #6e2637; padding-left: 8px; }
   .v9-mega-column a.depth3 { position: relative; padding-left: 14px; font-size: 12px; color: #8a7d72; }
   .v9-mega-column a.depth3::before { content: "—"; position: absolute; left: 0; color: #c98e8d; }
-  .v9-mega-note { align-self: end; margin: 0; color: #756a60; font: 10px/1.7 Georgia, serif; letter-spacing: .12em; }
+  .v9-mega-note { align-self: end; margin: 0; color: #756a60; font: 700 10px/1.7 var(--font); letter-spacing: .12em; }
   .v9-mega-note b { color: #6e2637; }
 }
 
