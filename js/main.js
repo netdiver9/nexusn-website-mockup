@@ -8,7 +8,7 @@
   "use strict";
 
   var ROOT = document.body.getAttribute("data-root") || "./";
-  /* 시안 키는 v1~v9, 파생 시안은 v8-1 처럼 뒤에 -숫자를 붙인다 */
+  /* 시안 키는 v1~v9, 파생 시안은 v8-1·v8-2처럼 뒤에 -숫자를 붙인다 */
   var THEME_RE = /^v[1-9](?:-[1-9])?$/;
   var themeMatch = location.pathname.match(/\/(v[1-9](?:-[1-9])?)(?:\/|$)/);
   var SITE_THEME = document.body.getAttribute("data-site-theme") ||
@@ -31,14 +31,14 @@
   }
   /* 테마 CSS 주입은 서브페이지에서만 — 시안 메인(/vN/)은 자기 고유 스타일 유지 */
   if (THEME_RE.test(SITE_THEME) && !themeMatch) {
-    /* 파생 시안(v8-1)은 원본 시안(v8) 규칙을 그대로 물려받고 차이점만 덮어쓴다 */
+    /* 파생 시안(v8-1·v8-2)은 원본 시안(v8) 규칙을 그대로 물려받고 차이점만 덮어쓴다 */
     var baseTheme = SITE_THEME.split("-")[0];
     if (baseTheme !== SITE_THEME) document.body.classList.add("site-theme-" + baseTheme);
     document.body.classList.add("site-theme-" + SITE_THEME);
     if (!document.querySelector('link[data-subpage-themes]')) {
       var themeCss = document.createElement("link");
       themeCss.rel = "stylesheet";
-      themeCss.href = ROOT + "css/subpage-themes.css?v=20260819-v81";
+      themeCss.href = ROOT + "css/subpage-themes.css?v=20260820-v82";
       themeCss.setAttribute("data-subpage-themes", "");
       document.head.appendChild(themeCss);
     }
@@ -399,8 +399,8 @@
   function renderThemeSwitcher() {
     if (!detailMatch) return;
     var current = THEME_RE.test(SITE_THEME) ? SITE_THEME.slice(1) : "3";
-    /* 8-1은 시안 8 뒤에 오도록 순서를 명시한다 */
-    var order = ["1", "2", "3", "4", "5", "6", "7", "8", "8-1", "9"];
+    /* 파생 시안은 원본 시안 8 뒤에 오도록 순서를 명시한다 */
+    var order = ["1", "2", "3", "4", "5", "6", "7", "8", "8-1", "8-2", "9"];
     var links = "";
     order.forEach(function (n) {
       var compareUrl = new URL(location.href);

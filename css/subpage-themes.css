@@ -455,3 +455,38 @@
 .detail-page.site-theme-v8-1 .mv-card h3{color:#fff}
 .detail-page.site-theme-v8-1 .mv-card p{color:rgba(255,255,255,.88)}
 
+/* ==========================================================================
+   시안 8-2 - 시안 8을 기반으로 한 밝은 팀 중심 비교안
+   페이지 성격에 맞는 인물 사진을 사용해 같은 사진의 반복 노출을 줄인다.
+   ========================================================================== */
+.detail-page.site-theme-v8-2{--v82-hero:url("../assets/img/design09-people-bright-mixed.png")}
+.detail-page.site-theme-v8-2.detail-services{--v82-hero:url("../assets/img/design09-women-voices.png")}
+.detail-page.site-theme-v8-2.detail-recruit{--v82-hero:url("../assets/img/design09-women-letter.png")}
+.detail-page.site-theme-v8-2.detail-board{--v82-hero:url("../assets/img/design09-editorial-people.png")}
+.site-theme-v8-2.detail-page .page-hero{
+  background-image:linear-gradient(110deg,rgba(16,43,69,.96),rgba(16,43,69,.42)),var(--v82-hero);
+  background-position:center,center;
+  background-size:cover,cover;
+}
+.detail-page.site-theme-v8-2.detail-about .page-hero{background-position:center,center 43%}
+.detail-page.site-theme-v8-2.detail-recruit .page-hero{background-position:center,center 35%}
+.detail-page.site-theme-v8-2.detail-board .page-hero{background-position:center,30% center}
+.detail-page.site-theme-v8-2 .page-hero .p-eyebrow::before{content:"DESIGN 08-2"}
+
+/* 네이비 원 안의 아이콘은 흰색으로 통일하되, 밝은 프로세스 원은 원래 색을 유지 */
+.detail-page.site-theme-v8-2 .icon-wrap,
+.detail-page.site-theme-v8-2 .p-icon{color:#fff}
+.detail-page.site-theme-v8-2 .icon-wrap svg,
+.detail-page.site-theme-v8-2 .p-icon svg{color:#fff;stroke:#fff}
+.detail-page.site-theme-v8-2 .process-step .p-icon{color:var(--t-primary)}
+.detail-page.site-theme-v8-2 .process-step .p-icon svg{color:var(--t-primary);stroke:var(--t-primary)}
+
+/* 비전 카드: 네이비 배경과 흰 제목으로 충분한 대비를 확보 */
+.detail-page.site-theme-v8-2 .mv-card{
+  background:linear-gradient(135deg,#102b45,#205b86);
+  border:1px solid #c49a54;border-top:4px solid #c49a54;
+}
+.detail-page.site-theme-v8-2 .mv-card.alt{background:linear-gradient(135deg,#0b2134,#173f5e)}
+.detail-page.site-theme-v8-2 .mv-card .mv-label{color:#e0ba74}
+.detail-page.site-theme-v8-2 .mv-card h3{color:#fff}
+.detail-page.site-theme-v8-2 .mv-card p{color:rgba(255,255,255,.88)}
