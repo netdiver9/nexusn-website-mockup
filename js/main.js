@@ -8,31 +8,37 @@
   "use strict";
 
   var ROOT = document.body.getAttribute("data-root") || "./";
-  var themeMatch = location.pathname.match(/\/(v[1-9])(?:\/|$)/);
+  /* 시안 키는 v1~v9, 파생 시안은 v8-1 처럼 뒤에 -숫자를 붙인다 */
+  var THEME_RE = /^v[1-9](?:-[1-9])?$/;
+  var themeMatch = location.pathname.match(/\/(v[1-9](?:-[1-9])?)(?:\/|$)/);
   var SITE_THEME = document.body.getAttribute("data-site-theme") ||
     new URLSearchParams(location.search).get("site") ||
     (themeMatch ? themeMatch[1] : "");
   /* 시안 → 서브페이지 이동 시 테마 유지:
      시안 페이지에서 테마를 기억해 두고, 테마 정보가 없는 서브페이지에서 복원 */
-  if (/^v[1-9]$/.test(SITE_THEME)) {
+  if (THEME_RE.test(SITE_THEME)) {
     try { localStorage.setItem("nexusn-site-theme", SITE_THEME); } catch (e) {}
   } else {
     try { SITE_THEME = localStorage.getItem("nexusn-site-theme") || ""; } catch (e) {}
+    if (!THEME_RE.test(SITE_THEME)) SITE_THEME = "";
   }
   /* 메뉴 링크에 ?site= 를 붙여 링크 공유 시에도 테마가 유지되게 함 */
-  var THEME_QS = /^v[1-9]$/.test(SITE_THEME) ? "?site=" + SITE_THEME : "";
+  var THEME_QS = THEME_RE.test(SITE_THEME) ? "?site=" + SITE_THEME : "";
   /* 상세페이지 종류를 body class로 노출해 페이지별 구성요소도 시안 테마에 맞춤 */
   var detailMatch = location.pathname.match(/\/(about|services|recruit|board)\/([^/?#]+)\.html$/);
   if (detailMatch) {
     document.body.classList.add("detail-page", "detail-" + detailMatch[1], "page-" + detailMatch[2]);
   }
   /* 테마 CSS 주입은 서브페이지에서만 — 시안 메인(/vN/)은 자기 고유 스타일 유지 */
-  if (/^v[1-9]$/.test(SITE_THEME) && !themeMatch) {
+  if (THEME_RE.test(SITE_THEME) && !themeMatch) {
+    /* 파생 시안(v8-1)은 원본 시안(v8) 규칙을 그대로 물려받고 차이점만 덮어쓴다 */
+    var baseTheme = SITE_THEME.split("-")[0];
+    if (baseTheme !== SITE_THEME) document.body.classList.add("site-theme-" + baseTheme);
     document.body.classList.add("site-theme-" + SITE_THEME);
     if (!document.querySelector('link[data-subpage-themes]')) {
       var themeCss = document.createElement("link");
       themeCss.rel = "stylesheet";
-      themeCss.href = ROOT + "css/subpage-themes.css?v=20260815-mobile";
+      themeCss.href = ROOT + "css/subpage-themes.css?v=20260819-v81";
       themeCss.setAttribute("data-subpage-themes", "");
       document.head.appendChild(themeCss);
     }
@@ -264,8 +270,20 @@
       });
     });
     if (!group) return;
-    var tabs = visibleItems(group).map(function (it) {
-      return '<a class="' + (isCurrent(it.href) ? "active" : "") + '" href="' + ROOT + it.href + THEME_QS + '">' + it.label + "</a>";
+    /* 탭에는 depth 2 항목만 노출한다. 예) 사업소개는 도급·파견·HR솔루션 3개만 두고
+       채용대행·헤드헌팅·인사/노무컨설팅은 HR솔루션 하위이므로 탭에서 제외하고,
+       그 하위 페이지에 들어가면 부모인 HR솔루션 탭을 활성 표시한다. */
+    var items = visibleItems(group);
+    var activeParent = null;
+    items.forEach(function (it, i) {
+      if (!it.depth3 || !isCurrent(it.href)) return;
+      for (var p = i - 1; p >= 0; p -= 1) {
+        if (!items[p].depth3) { activeParent = items[p]; return; }
+      }
+    });
+    var tabs = items.filter(function (it) { return !it.depth3; }).map(function (it) {
+      var active = isCurrent(it.href) || it === activeParent;
+      return '<a class="' + (active ? "active" : "") + '" href="' + ROOT + it.href + THEME_QS + '">' + it.label + "</a>";
     }).join("");
     el.className = "page-tabs";
     el.innerHTML = '<div class="container"><div class="tabs-inner">' + tabs + "</div></div>";
@@ -380,16 +398,18 @@
   /* 상세페이지 시안 비교기: 현재 페이지를 유지한 채 디자인만 즉시 전환 */
   function renderThemeSwitcher() {
     if (!detailMatch) return;
-    var current = /^v[1-9]$/.test(SITE_THEME) ? SITE_THEME.slice(1) : "3";
+    var current = THEME_RE.test(SITE_THEME) ? SITE_THEME.slice(1) : "3";
+    /* 8-1은 시안 8 뒤에 오도록 순서를 명시한다 */
+    var order = ["1", "2", "3", "4", "5", "6", "7", "8", "8-1", "9"];
     var links = "";
-    for (var n = 1; n <= 9; n += 1) {
+    order.forEach(function (n) {
       var compareUrl = new URL(location.href);
       compareUrl.searchParams.set("site", "v" + n);
       compareUrl.searchParams.delete("refresh");
       links += '<a href="' + compareUrl.pathname + compareUrl.search + '"' +
-        (String(n) === current ? ' class="active" aria-current="page"' : "") +
+        (n === current ? ' class="active" aria-current="page"' : "") +
         '>시안 ' + n + "</a>";
-    }
+    });
     var compare = document.createElement("details");
     compare.className = "theme-compare";
     compare.innerHTML = '<summary><span>DESIGN</span> 시안 ' + current + ' 비교</summary>' +

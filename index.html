@@ -78,6 +78,19 @@
     .card:nth-child(9) span,.card:nth-child(9) .num { color: #e7bd97; }
     .card:nth-child(3)::before,.card:nth-child(4)::before,.card:nth-child(5)::before,.card:nth-child(6)::before,.card:nth-child(8)::before,.card:nth-child(9)::before { content: "NEW"; position: absolute; right: 18px; top: 17px; padding: 5px 8px; border-radius: 999px; background: #0f2440; color: #fff; font-size: 9px; font-weight: 900; letter-spacing: .12em; }
     .card:nth-child(8)::before { content: "RECOMMENDED"; background: #e0ba74; color: #102b45; }
+    /* 최상단 확정안 영역 — .cards 그리드 밖에 두어 기존 nth-child 번호를 건드리지 않는다.
+       카드를 하나 더 넣으면(8-2 등) 자동으로 2단 배치되고, 좁은 화면에서는 1단으로 접힌다. */
+    .featured { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; margin-bottom: 22px; }
+    .card.pick { border: 0; padding: 40px 34px; background: linear-gradient(120deg, #0b2035, #1b4a72 62%, #26638f); color: #fff; }
+    .card.pick h2 { color: #fff; font-size: 27px; }
+    .card.pick p { color: #cbdae6; }
+    .card.pick .num, .card.pick span { color: #e0ba74; }
+    /* 배지 문구는 각 카드의 data-badge 값에서 가져온다 — 8-2 추가 시 값만 바꾸면 된다 */
+    .card.pick::before { content: attr(data-badge); position: absolute; right: 18px; top: 17px; padding: 6px 10px; border-radius: 999px; background: #e0ba74; color: #102b45; font-size: 9px; font-weight: 900; letter-spacing: .12em; }
+    /* 두 장이 나란히 놓일 때는 제목·여백을 조금 줄여 균형을 맞춘다 */
+    .featured:has(.card.pick + .card.pick) .card.pick h2 { font-size: 23px; }
+    .featured:has(.card.pick + .card.pick) .card.pick { padding: 34px 28px; }
+    @media (max-width: 640px) { .card.pick::before { position: static; display: inline-block; margin-bottom: 12px; } }
     .foot { margin-top: 46px; font-size: 13px; color: #8a95a5; }
   </style>
 </head>
@@ -85,11 +98,27 @@
   <div class="wrap">
     <p class="logo"><img src="assets/brand/nexusn-logo.svg" alt="NEXUSN"></p>
     <h1>넥서스엔 홈페이지 디자인 시안</h1>
-    <p class="desc">아홉 가지 시안 중 마음에 드는 방향을 선택해 주세요. 메뉴와 내용은 동일하며 디자인 콘셉트만 다릅니다.</p>
+    <p class="desc">확정 시안은 맨 위의 <strong>시안 8-1</strong>입니다. 아래 시안들은 비교용으로 남겨 두었으며, 메뉴와 내용은 모두 동일하고 디자인 콘셉트만 다릅니다.</p>
     <nav class="quick-select" aria-label="신규 시안 빠른 선택">
       <p>NEW DESIGN · 빠른 선택</p>
-      <div class="quick-links"><a href="v3/">시안 3</a><a href="v4/">시안 4</a><a href="v5/">시안 5</a><a href="v6/">시안 6</a><a class="recommended" href="v8/">시안 8</a><a class="recommended" href="v9/">시안 9 · 신규</a></div>
+      <div class="quick-links"><a class="recommended" href="v8-1/">시안 8-1 · 확정</a><a href="v3/">시안 3</a><a href="v4/">시안 4</a><a href="v5/">시안 5</a><a href="v6/">시안 6</a><a class="recommended" href="v8/">시안 8</a><a class="recommended" href="v9/">시안 9 · 신규</a></div>
     </nav>
+    <div class="featured">
+      <a class="card pick" href="v8-1/" data-badge="확정 시안 · 0818 수정 반영">
+        <p class="num">DESIGN 08-1</p>
+        <h2>시안 8-1 — Trust &amp; People (수정본)</h2>
+        <p>확정된 시안 8을 기준으로 0818 수정요청을 반영한 안입니다.<br>히어로·서브페이지 인물 사진을 교체하고, 아이콘 대비와 비전 카드 가독성을 개선했습니다.</p>
+        <span>시안 8-1 보기 →</span>
+      </a>
+      <!-- 시안 8-2 추가 예정 — 아래 블록의 주석을 풀고 문구만 바꾸면 위 카드와 나란히 표시된다.
+      <a class="card pick" href="v8-2/" data-badge="수정안 2">
+        <p class="num">DESIGN 08-2</p>
+        <h2>시안 8-2 — Trust &amp; People (대안)</h2>
+        <p>시안 8-1과 비교할 수 있도록 준비 중인 대안입니다.</p>
+        <span>시안 8-2 보기 →</span>
+      </a>
+      -->
+    </div>
     <div class="cards">
       <a class="card" href="v1/">
         <p class="num">DESIGN 01</p>

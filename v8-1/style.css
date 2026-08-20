@@ -1,0 +1,49 @@
+/* ==========================================================================
+   시안 8-1 — 시안 8(Trust & People)에 0818 수정요청을 반영한 안
+   ../v8/style.css 를 먼저 불러온 뒤 이 파일이 차이점만 덮어씁니다.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   [수정 1] 메인 히어로 첫 장면 교체
+   기존 design08-trust-advisory.png(중년 남성 상담 장면)은 올드하다는 의견.
+   시안 9의 인물 사진으로 바꾸되, 원본이 크림·버건디 웜톤이라 v8 네이비
+   팔레트와 겉돌아 네이비 틴트를 덧씌워 톤을 맞춘다.
+   -------------------------------------------------------------------------- */
+.v8-1 .v8-hero .slide-1 {
+  background-image:
+    linear-gradient(90deg, var(--v8-navy) 0%, rgba(16, 43, 69, .82) 38%, rgba(16, 43, 69, .34) 100%),
+    linear-gradient(0deg, rgba(16, 43, 69, .46), rgba(16, 43, 69, .46)),
+    url("../assets/img/design09-editorial-people.png");
+  background-position: center, center, 38% center;
+  background-size: cover, cover, cover;
+}
+
+/* 슬라이드 2·3은 시안 8의 여성 모델 사진을 유지하되 첫 장면과 톤을 맞춘다 */
+.v8-1 .v8-hero .slide-2 {
+  background-image:
+    linear-gradient(90deg, var(--v8-navy) 0%, rgba(16, 43, 69, .80) 38%, rgba(16, 43, 69, .28) 100%),
+    url("../assets/img/design08-women-hero-02.png");
+}
+.v8-1 .v8-hero .slide-3 {
+  background-image:
+    linear-gradient(90deg, var(--v8-navy) 0%, rgba(16, 43, 69, .80) 38%, rgba(16, 43, 69, .28) 100%),
+    url("../assets/img/design08-women-hero-03.png");
+}
+
+/* --------------------------------------------------------------------------
+   [수정 4·6·7] 아이콘 안 도형을 흰색으로
+   시안 8은 네이비 원 안의 라인 아이콘이 골드(#e0ba74)라 대비가 약했다.
+   메인의 WHY NEXUSN 마크와 프로세스 원 아이콘을 흰색으로 통일한다.
+   -------------------------------------------------------------------------- */
+.v8-1 .value-mark { color: #fff; }
+.v8-1 .value-mark svg { color: #fff; stroke: #fff; }
+.v8-1 .value:hover .value-mark { background: var(--v8-navy); }
+.v8-1 .value:hover .value-mark svg { color: #fff; stroke: #fff; }
+
+.v8-1 .process-grid b { background: var(--v8-navy); border-color: var(--v8-gold); }
+.v8-1 .process-grid b svg { color: #fff; stroke: #fff; }
+
+/* 모바일에서도 히어로 첫 장면의 인물이 잘리지 않도록 */
+@media (max-width: 640px) {
+  .v8-1 .v8-hero .slide-1 { background-position: center, center, 42% center; }
+}
