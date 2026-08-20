@@ -31,17 +31,14 @@
   }
   /* 테마 CSS 주입은 서브페이지에서만 — 시안 메인(/vN/)은 자기 고유 스타일 유지 */
   if (THEME_RE.test(SITE_THEME) && !themeMatch) {
-    /* v8-1은 원본 시안 8의 수정안이라 기반 규칙을 물려받는다.
-       v8-2는 별도의 디자인 시스템이므로 독립 테마로 적용한다. */
+    /* 파생 시안(v8-1·v8-2)은 원본 시안(v8) 규칙을 그대로 물려받고 차이점만 덮어쓴다 */
     var baseTheme = SITE_THEME.split("-")[0];
-    if (baseTheme !== SITE_THEME && SITE_THEME !== "v8-2") {
-      document.body.classList.add("site-theme-" + baseTheme);
-    }
+    if (baseTheme !== SITE_THEME) document.body.classList.add("site-theme-" + baseTheme);
     document.body.classList.add("site-theme-" + SITE_THEME);
     if (!document.querySelector('link[data-subpage-themes]')) {
       var themeCss = document.createElement("link");
       themeCss.rel = "stylesheet";
-      themeCss.href = ROOT + "css/subpage-themes.css?v=20260820-v82r2";
+      themeCss.href = ROOT + "css/subpage-themes.css?v=20260820-v82";
       themeCss.setAttribute("data-subpage-themes", "");
       document.head.appendChild(themeCss);
     }
