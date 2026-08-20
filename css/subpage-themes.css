@@ -428,11 +428,18 @@
 /* 히어로 배지 표기 */
 .detail-page.site-theme-v8-1 .page-hero .p-eyebrow::before{content:"DESIGN 08-1"}
 
-/* [수정 4·6·7] 아이콘 안 도형을 흰색으로 (기존 골드 #e0ba74 → #fff) */
+/* [수정 4·6·7] 아이콘 안 도형을 흰색으로 (기존 골드 #e0ba74 → #fff)
+   대상은 네이비 원 안에 아이콘이 들어가는 .icon-wrap / .p-icon 이다. */
 .detail-page.site-theme-v8-1 .icon-wrap,
 .detail-page.site-theme-v8-1 .p-icon{color:#fff}
 .detail-page.site-theme-v8-1 .icon-wrap svg,
 .detail-page.site-theme-v8-1 .p-icon svg{color:#fff;stroke:#fff}
+
+/* 단, 채용 프로세스 등의 .process-step 원은 배경이 베이지(--t-soft)라
+   흰색 아이콘을 넣으면 보이지 않는다. 수정요청 대상도 아니었으므로
+   시안 8의 원래 색(네이비 아이콘)을 그대로 유지한다. */
+.detail-page.site-theme-v8-1 .process-step .p-icon{color:var(--t-primary)}
+.detail-page.site-theme-v8-1 .process-step .p-icon svg{color:var(--t-primary);stroke:var(--t-primary)}
 
 /* [수정 3] 비전 페이지 MISSION/VISION 카드 가독성
    기존에는 카드 제목색이 --t-primary(네이비)라 네이비 배경 위에 묻혔다.
